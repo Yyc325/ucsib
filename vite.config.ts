@@ -9,6 +9,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import monacoEditorPlugin from "vite-plugin-monaco-editor";
 import postcssPluginPx2rem from 'postcss-plugin-px2rem'
+import topLevelAwait from 'vite-plugin-top-level-await'
 // px2rem 配置参数
 const px2remOptions = {
   rootValue: 10, //换算基数， 默认100 ,也就是1440px ，这样的话把根标签的字体规定为1rem为50px,这样就可以从设计稿上量出多少个px直接在代码中写多少px了
@@ -44,6 +45,10 @@ const viteConfig = ({ command, mode }: ConfigEnv): UserConfig => {
       }),
       Components({
         resolvers: [ElementPlusResolver()],
+      }),
+      topLevelAwait({
+        promiseExportName: '__tla',
+        promiseImportName: i => `__tla_${i}`
       }),
     ],
     resolve: {
@@ -87,6 +92,7 @@ const viteConfig = ({ command, mode }: ConfigEnv): UserConfig => {
       cssTarget: ["chrome66"],
       cssCodeSplit: true,
       outDir: VITE_PACKAGE_NAME,
+      sourcemap: true,
       terserOptions: {
         compress: {
           keep_infinity: true,

@@ -13,27 +13,9 @@ export const router = createRouter({
   routes: routes,
 });
 
-export const setupRouter = (app: App<Element>) => {
-  app.use(router);
+export const  setupRouter =  (app: App<Element>) => {
   router.beforeEach((to, from, next) => {
-    const { getToken, setUserInfo } = useUser();
-    if (getToken.value) {
-      if (to.name === PageEnum.BASE_LOGIN_NAME) {
-        next(from);
-      } else {
-        if (to.path === PageEnum.ROOT_ROUTE) {
-          next({ path: PageEnum.BASE_HOME });
-        } else {
-          next();
-        }
-      }
-    } else {
-      if (noPermissionsPath.includes(to.path)) {
-        next();
-      } else {
-        next(PageEnum.BASE_LOGIN);
-      }
-    }
+      next();
   });
   router.afterEach((to, from) => {
     if (typeof to.meta.title === "string") {
@@ -42,5 +24,7 @@ export const setupRouter = (app: App<Element>) => {
       // 提供一个默认值或者错误处理
       document.title = "首页";
     }
+    // window.location.reload();
   });
+  app.use(router);
 };

@@ -1,19 +1,41 @@
 .home {
+  background: #fff;
   .home_container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     .home_section {
-      position: relative;
-      z-index: 4;
-      img {
-        width: 100%;
-      }
-      &.panel {
-        position: static;
-        z-index: 1;
-        img {
-          position: sticky;
+      .panel-collection{
+        .panel{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 1500px;
+          padding: 36px 0;
+          text-shadow: none;
+          h2{
+            font-size: 58px;
+          }
+          p{
+            font-size: 38px;
+            line-height: 1.6;
+            text-indent: 2em;
+          }
+        }
+        #more-about-stanford{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width:435px ;
+          height: 60px;
+          background: #b1040e;
+          padding: 0;
+          cursor: pointer;
+          span{
+            font-size: 24px;
+            color: #fff;
+          }
         }
       }
     }

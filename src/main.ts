@@ -14,13 +14,14 @@ import "@/utils/func/remTransform";
 
 // import "@/assets/js/autoFlex";
 
-async function MountApp() {
+function MountApp() {
   const app = createApp(App);
   app.use(i18n);
   app.use(pinia);
   app.use(ElementPlus);
-  await setupRouter(app);
-  await router.isReady();
-  app.mount("#app", true);
+  setupRouter(app);
+   router.isReady().then(() => {
+     app.mount("#app", true);
+   })
 }
-await MountApp();
+MountApp();

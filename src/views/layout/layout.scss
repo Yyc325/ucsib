@@ -3,6 +3,7 @@
   height: 100%;
   min-width: 1226px;
   background-color: $bgPrimaryColor;
+  text-shadow: 0 0 30px rgba(0,0,0,.7);
   &::-webkit-scrollbar {
     display: none;
   }
@@ -16,9 +17,9 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
     background-color: transparent;
     overflow: hidden;
+    min-height: 820px;
     .brand-bar {
       position: fixed;
       top: 0;
@@ -33,16 +34,25 @@
       font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 19px;
       z-index: 100;
+      &.is-chinese{
+        .menu-gateway-nav{
+          .menu-gateway-nav-container{
+            font-size: 16px !important;
+          }
+        }
+      }
       .brand-bar__wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 1500px;
         height: 50px;
-        .logo {
-          display: flex;
-          span {
-            white-space: nowrap;
+        .info{
+          .logo {
+            display: flex;
+            span {
+              white-space: nowrap;
+            }
           }
         }
         .menu-gateway-nav {
@@ -103,6 +113,20 @@
               }
               .search-toggle-inner {
                 margin-left: 10px;
+              }
+            }
+            .switch-logo{
+              margin: 0 8px;
+            }
+            .login{
+              display: flex;
+              align-items: center;
+              height: 100%;
+              padding: 0 16px;
+              cursor: pointer;
+              transition: all 0.3s;
+              &:hover {
+                background-color: #b1040e;
               }
             }
           }
@@ -173,9 +197,9 @@
     }
   }
   &-body {
+    position: relative;
     display: flex;
     width: 100%;
-    overflow: hidden;
     z-index: 1000;
     &-content {
       flex: 1;
@@ -185,6 +209,20 @@
         height: 100%;
         overflow: auto;
       }
+    }
+  }
+}
+// 语言选择弹窗的样式
+.language-list{
+  padding: 8px;
+  .language-item{
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.15);
+    margin-bottom: 8px;
+    &:last-child{
+      margin-bottom: 0;
+      cursor: pointer;
     }
   }
 }
