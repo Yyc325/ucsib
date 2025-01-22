@@ -1,0 +1,21 @@
+.home {
+  .home_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .home_section {
+      position: relative;
+      z-index: 4;
+      img {
+        width: 100%;
+      }
+      &.panel {
+        position: static;
+        z-index: 1;
+        img {
+          position: sticky;
+        }
+      }
+    }
+  }
+}
