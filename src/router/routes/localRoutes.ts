@@ -19,6 +19,14 @@ const localRoutes = [
         },
         component: ComponentCanstants["HOME_PAGE"],
       },
+      {
+        path: "students",
+        name: "Students",
+        meta: {
+          title: "学生",
+        },
+        component: ComponentCanstants["STUDENTS_PAGE"],
+      },
     ],
   },
 ] as AppRouteRecordRaw[];

@@ -10,6 +10,7 @@ export enum PageEnum {
   BASE_REGISTER = "/register",
   BASE_REGISTER_NAME = "register",
 }
-
+// 免登 页面组件
 export const noPermissionsRoutes = {
+  LOGIN: () => import("@/views/Login/Login.vue"),
 };
