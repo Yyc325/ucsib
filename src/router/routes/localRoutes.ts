@@ -14,7 +14,7 @@ const localRoutes = [
         path: "home",
         name: "home",
         meta: {
-          title: "首页",
+          title: "UCSIB",
           icon: HomeFilled,
         },
         component: ComponentCanstants["HOME_PAGE"],
@@ -23,7 +23,7 @@ const localRoutes = [
         path: "students",
         name: "Students",
         meta: {
-          title: "学生",
+          title: "UCSIB",
         },
         component: ComponentCanstants["STUDENTS_PAGE"],
       },
