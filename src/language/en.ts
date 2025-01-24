@@ -16,7 +16,7 @@ export default {
     events:"Events",
     academics:"Academics",
     research:"Research",
-    healthCare:"Health Care",
+    healthCare:"Store",
     campusLife:"Campus Life",
     admission:"Admission",
     about:"About",

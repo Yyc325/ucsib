@@ -57,7 +57,7 @@
         <div class="panel-collection">
           <img src="https://niu.xycloud.net.cn/knowledge/123/123/2025-1-22/2C9F81E4-F38C-4C1F-A581-C24D3C7F20EE.png"
             alt="">
-          <p class="panel-collection-title">UCS IBDP Department</p>
+          <p class="panel-collection-title">UCS IBDP</p>
         </div>
       </div>
       <div class="i-layout-body">
