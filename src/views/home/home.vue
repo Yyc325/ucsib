@@ -3,17 +3,18 @@
     <el-container class="home_container">
       <section class="home_section main">
         <section class="panel-collection" data-modular-content-collection="">
-          <section class="panel theme--white" data-type="section" id="a-mission-defined-by-possibility" data-modular-content="" data-js="panel" data-index="3">
+          <section class="panel theme--white" data-type="section" id="Beyond east or west, for all humanity" data-modular-content="" data-js="panel" data-index="3">
             <header>
-              <h2 class="center">A Mission Defined by Possibility</h2>
+              <h2 class="center">Beyond east or west, for all humanity</h2>
             </header>
             <section class="panel theme--white" data-type="position-stmt" id="position-stmt-1" data-width="full">
-              <p>At Stanford, our mission of discovery and learning is energized by a spirit of optimism and possibility that dates to our founding. Here you’ll find a place of intellectual expansiveness, wide-ranging perspectives, and freedom to explore new lines of thinking. Buzzing with ideas and innovation, approaching questions with openness and curiosity, pursuing excellence in all we do – this is Stanford.</p>
+              <p>We are committed to cultivating talents</p>
+              <p>who possess a scientific spirit, humanistic literacy, and a strong physique.</p>
             </section><!-- panel  -->
-            <section class="panel" data-type="call-to-action" id="more-about-stanford">
-              <span >More about Stanford</span>
-            </section><!-- panel More about Stanford -->
-          </section><!-- panel A Mission Defined by Possibility -->
+            <section class="panel" data-type="call-to-action" id="more-about-ucs">
+              <span >More about UCS IB</span>
+            </section><!-- panel More about UCS -->
+          </section><!-- panel Beyond east or west, for all humanity -->
         </section>
       </section>
     </el-container>
