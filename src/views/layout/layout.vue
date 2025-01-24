@@ -10,8 +10,16 @@
         <div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
           <div class="brand-bar__wrapper">
             <div class="info">
-              <span class="logo" @click="jumpTo('home')" style="display: flex; align-items: center;">
-                <img src="@/assets/images/layout/logo.png" alt="Logo" style="margin-right: 10px;" />
+              <span
+                class="logo"
+                @click="jumpTo('home')"
+                style="display: flex; align-items: center"
+              >
+                <img
+                  src="@/assets/images/layout/logo.png"
+                  alt="Logo"
+                  style="margin-right: 10px"
+                />
                 <span>UCS IBDP</span>
               </span>
             </div>
@@ -35,7 +43,7 @@
                   </span>
                 </div>
                 <el-popover
-                  trigger="click"
+                  trigger="hover"
                   v-model:visible="languageVisible"
                   popper-style="z-index:99999!important"
                 >
@@ -159,9 +167,8 @@ const { primaryNavs, languages, languageVisible } = toRefs(state);
 
 // 切换语言
 const switchLanguage = (lang: any) => {
-  console.log("xxxx");
   locale.value = lang.value;
-  // languageVisible.value = false;
+  languageVisible.value = false;
   state.languages = [
     {
       label: t("language.chinese"),
