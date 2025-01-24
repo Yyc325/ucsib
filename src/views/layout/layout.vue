@@ -10,8 +10,9 @@
         <div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
           <div class="brand-bar__wrapper">
             <div class="info">
-              <span class="logo" @click="jumpTo('home')">
-                <img src="@/assets/images/layout/logo.png" />
+              <span class="logo" @click="jumpTo('home')" style="display: flex; align-items: center;">
+                <img src="@/assets/images/layout/logo.png" alt="Logo" style="margin-right: 10px;" />
+                <span>UCS IBDP</span>
               </span>
             </div>
             <nav class="menu-gateway-nav">
