@@ -19,9 +19,10 @@
     width: 100%;
     background-color: transparent;
     overflow: hidden;
-    min-height: 820px;
+
     .brand-bar {
       position: fixed;
+
       top: 0;
       left: 0;
       display: flex;
@@ -33,7 +34,7 @@
       color: #fff;
       font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 19px;
-      z-index: 100;
+      z-index: 10001;
       &.is-chinese {
         .menu-gateway-nav {
           .menu-gateway-nav-container {
@@ -52,6 +53,11 @@
             display: flex;
             span {
               white-space: nowrap;
+            }
+            img {
+              width: 3.2rem;
+              height: 3.2rem;
+              display: block;
             }
           }
         }
@@ -140,12 +146,13 @@
       width: 100%;
       height: 50px;
       padding: 0 234px;
-      z-index: 99;
+      z-index: 10001;
       .menu {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+
         .menu-item {
           height: 100%;
           display: flex;

@@ -1,11 +1,18 @@
 <template>
   <div class="i-layout">
     <div class="i-layout-wrap">
-      <div class="i-layout-header">
+      <div
+        class="i-layout-header"
+        :style="{
+          minHeight: `${viewportHeight}px`,
+        }"
+      >
         <div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
           <div class="brand-bar__wrapper">
             <div class="info">
-              <span class="logo" @click="jumpTo('home')">UCS IBDP</span>
+              <span class="logo" @click="jumpTo('home')">
+                <img src="@/assets/images/layout/logo.png" />
+              </span>
             </div>
             <nav class="menu-gateway-nav">
               <div class="menu-gateway-nav-container">
@@ -87,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, toRefs, onMounted } from "vue";
+import { reactive, computed, toRefs, onMounted, ref, onUnmounted } from "vue";
 import { useUser } from "@/hooks/useUser";
 import { useI18n } from "vue-i18n";
 
@@ -221,6 +228,27 @@ const jumpTo = (type: string) => {
       break;
   }
 };
+
+// header高度
+// 定义响应式变量来存储视口高度
+const viewportHeight = ref(window.innerHeight);
+
+// 定义一个函数用于更新视口高度
+function updateViewportHeight() {
+  viewportHeight.value = window.innerHeight;
+}
+
+// 组件挂载时立即调用一次以获取初始值
+onMounted(() => {
+  updateViewportHeight();
+  // 监听窗口大小变化事件
+  window.addEventListener("resize", updateViewportHeight);
+});
+
+// 组件卸载时移除事件监听器
+onUnmounted(() => {
+  window.removeEventListener("resize", updateViewportHeight);
+});
 </script>
 <style lang="scss" scoped>
 @import "./layout.scss";
