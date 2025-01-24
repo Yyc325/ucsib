@@ -33,7 +33,11 @@
                     {{ $t("header.search") }}
                   </span>
                 </div>
-                <el-popover trigger="hover" v-model:visible="languageVisible">
+                <el-popover
+                  trigger="click"
+                  v-model:visible="languageVisible"
+                  popper-style="z-index:99999!important"
+                >
                   <template #reference>
                     <div class="switch-logo">
                       <svg
@@ -154,8 +158,9 @@ const { primaryNavs, languages, languageVisible } = toRefs(state);
 
 // 切换语言
 const switchLanguage = (lang: any) => {
+  console.log("xxxx");
   locale.value = lang.value;
-  languageVisible.value = false;
+  // languageVisible.value = false;
   state.languages = [
     {
       label: t("language.chinese"),
