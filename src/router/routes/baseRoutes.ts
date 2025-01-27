@@ -11,4 +11,12 @@ export const baseRoutes = [
       title: "登录页", // 页面标题
     },
   },
+  {
+    path: "/students",
+    name: "Students",
+    component: ComponentCanstants["STUDENTS"],
+    meta: {
+      title: "学生页",
+    },
+  }
 ] as AppRouteRecordRaw[];

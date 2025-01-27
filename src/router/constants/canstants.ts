@@ -9,6 +9,9 @@ export enum PageEnum {
   // 注册页
   BASE_REGISTER = "/register",
   BASE_REGISTER_NAME = "register",
+  // 新闻页
+  BASE_NEWS = "/students",
+  BASE_NEWS_NAME = "students",
 }
 // 免登 页面组件
 export const noPermissionsRoutes = {
