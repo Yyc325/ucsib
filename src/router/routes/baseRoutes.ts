@@ -11,8 +11,7 @@ export const baseRoutes = [
       title: "登录页", // 页面标题
     },
   },
-<<<<<<< HEAD
-=======
+
   {
     path: "/students",
     name: "Students",
@@ -45,5 +44,5 @@ export const baseRoutes = [
       title: "校友页",
     },
   }
->>>>>>> b8d8196 (新增空白页面)
+
 ] as AppRouteRecordRaw[];

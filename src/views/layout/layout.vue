@@ -82,7 +82,6 @@
 import { reactive, computed, toRefs, onMounted, ref, onBeforeUnmount, watch } from "vue";
 import { useUser } from "@/hooks/useUser";
 import { useI18n } from "vue-i18n";
-import { ComponentCanstants } from "@/router/constants";
 
 import { Search } from "@element-plus/icons-vue";
 import { router } from "@/router";
@@ -93,43 +92,6 @@ const containerRef = ref<HTMLDivElement>();
 const state = reactive({
   isTop: false, // 是否在顶部导航栏显示
   languageVisible: false,
-<<<<<<< HEAD
-=======
-  primaryNavs: [
-    {
-      label: t("primaryNav.news"),
-      path: "/news",
-    },
-    {
-      label: t("primaryNav.events"),
-      path: "/events",
-    },
-    {
-      label: t("primaryNav.academics"),
-      path: "/academics",
-    },
-    {
-      label: t("primaryNav.research"),
-      path: "/research",
-    },
-    {
-      label: t("primaryNav.store"),
-      path: "/store",
-    },
-    {
-      label: t("primaryNav.campusLife"),
-      path: "/campusLife",
-    },
-    {
-      label: t("primaryNav.admission"),
-      path: "/admission",
-    },
-    {
-      label: t("primaryNav.about"),
-      path: "/about",
-    },
-  ],
->>>>>>> b8d8196 (新增空白页面)
   languages: [
     {
       label: "简体中文",
@@ -158,7 +120,7 @@ const state = reactive({
       name: "",
     },
     {
-      label: t("primaryNav.healthCare"),
+      label: t("primaryNav.store"),
       name: "",
     },
     {
@@ -199,13 +161,8 @@ const switchLanguage = (lang: any) => {
       name: "",
     },
     {
-<<<<<<< HEAD
-      label: t("primaryNav.healthCare"),
-      name: "",
-=======
       label: t("primaryNav.store"),
-      path: "",
->>>>>>> b8d8196 (新增空白页面)
+      name: "",
     },
     {
       label: t("primaryNav.campusLife"),
@@ -222,51 +179,11 @@ const switchLanguage = (lang: any) => {
   ];
 };
 // 页面跳转
-<<<<<<< HEAD
 const jumpTo = (name: string) => {
   router.push({
     name: name,
   });
 };
-=======
-const jumpTo = (type: string) => {
-  switch (type) {
-    case "home":
-      router.push({
-        path: "/home",
-      });
-      break;
-    case "login":
-      router.push({
-        name: "Login",
-      });
-      break;
-    case "students":
-      // router.push({
-      //   name: "Students",
-      // });
-      // 或
-      router.push({
-        path: "/students",
-      });
-      break;
-    case "faculty":
-      router.push({
-        path: "/faculty",
-      });
-      break;
-    case "families":
-      router.push({
-        path: "/families",
-      });
-      break;
-    case "alumni":
-      router.push({
-        path: "/alumni",
-      });
-      break;
-
->>>>>>> b8d8196 (新增空白页面)
 
 // 监听视口滚动事件
 const handleScroll = (e: any) => {
