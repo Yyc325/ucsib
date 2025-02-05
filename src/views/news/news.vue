@@ -1,5 +1,5 @@
 <template>
-	<div class="students">学生展示页</div>
+	<div class="news-container">新闻页</div>
 </template>
 
 <script lang="ts">
@@ -7,18 +7,14 @@ import { defineComponent } from 'vue';
 
 
 export default defineComponent({
-	name: 'Students',
+	name: 'News',
 	setup() {
-		const sayHello = () => {
-			console.log('hello');
-		}
 		return {
-			sayHello
 		};
 	},
 });
 </script>
 
 <style lang="scss" scoped>
-@import './students.scss';
+@import './news.scss';
 </style>

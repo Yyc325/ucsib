@@ -1,4 +1,4 @@
-// 无需权限的基础路由
+// 无需权限的基础路由(登录页\注册页\忘记密码页等)
 
 import { AppRouteRecordRaw } from "../type";
 import { ComponentCanstants } from "@/router/constants";
@@ -11,12 +11,4 @@ export const baseRoutes = [
       title: "登录页", // 页面标题
     },
   },
-  {
-    path: "/students",
-    name: "Students",
-    component: ComponentCanstants["STUDENTS"],
-    meta: {
-      title: "学生页",
-    },
-  }
 ] as AppRouteRecordRaw[];

@@ -1,25 +1,14 @@
 <template>
   <div class="i-layout">
     <div class="i-layout-wrap">
-      <div
-        class="i-layout-header"
-        :style="{
-          minHeight: `${viewportHeight}px`,
-        }"
-      >
+      <div class="i-layout-header" :style="{
+        minHeight: `${viewportHeight}px`,
+      }">
         <div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
           <div class="brand-bar__wrapper">
             <div class="info">
-              <span
-                class="logo"
-                @click="jumpTo('home')"
-                style="display: flex; align-items: center"
-              >
-                <img
-                  src="@/assets/images/layout/logo.png"
-                  alt="Logo"
-                  style="margin-right: 10px"
-                />
+              <span class="logo" @click="jumpTo('Home')" style="display: flex; align-items: center">
+                <img src="@/assets/images/layout/logo.png" alt="Logo" style="margin-right: 10px" />
                 <span>UCS IBDP</span>
               </span>
             </div>
@@ -27,7 +16,7 @@
               <div class="menu-gateway-nav-container">
                 <!--                <div class="gateway-nav&#45;&#45;label">Information for:</div>-->
                 <ul class="menu">
-                  <li class="menu-item" @click="jumpTo('students')">
+                  <li class="menu-item" @click="jumpTo('Students')">
                     {{ $t("header.student") }}
                   </li>
                   <li class="menu-item">{{ $t("header.faculty") }}</li>
@@ -42,38 +31,24 @@
                     {{ $t("header.search") }}
                   </span>
                 </div>
-                <el-popover
-                  trigger="hover"
-                  v-model:visible="languageVisible"
-                  popper-style="z-index:99999!important"
-                >
+                <el-popover trigger="hover" v-model:visible="languageVisible" popper-style="z-index:99999!important">
                   <template #reference>
                     <div class="switch-logo">
-                      <svg
-                        data-v-f414ea64=""
-                        viewBox="0 0 24 24"
-                        width="1.2em"
-                        height="1.2em"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m18.5 10l4.4 11h-2.155l-1.201-3h-4.09l-1.199 3h-2.154L16.5 10h2zM10 2v2h6v2h-1.968a18.222 18.222 0 0 1-3.62 6.301a14.864 14.864 0 0 0 2.336 1.707l-.751 1.878A17.015 17.015 0 0 1 9 13.725a16.676 16.676 0 0 1-6.201 3.548l-.536-1.929a14.7 14.7 0 0 0 5.327-3.042A18.078 18.078 0 0 1 4.767 8h2.24A16.032 16.032 0 0 0 9 10.877a16.165 16.165 0 0 0 2.91-4.876L2 6V4h6V2h2zm7.5 10.885L16.253 16h2.492L17.5 12.885z"
-                        ></path>
+                      <svg data-v-f414ea64="" viewBox="0 0 24 24" width="1.2em" height="1.2em">
+                        <path fill="currentColor"
+                          d="m18.5 10l4.4 11h-2.155l-1.201-3h-4.09l-1.199 3h-2.154L16.5 10h2zM10 2v2h6v2h-1.968a18.222 18.222 0 0 1-3.62 6.301a14.864 14.864 0 0 0 2.336 1.707l-.751 1.878A17.015 17.015 0 0 1 9 13.725a16.676 16.676 0 0 1-6.201 3.548l-.536-1.929a14.7 14.7 0 0 0 5.327-3.042A18.078 18.078 0 0 1 4.767 8h2.24A16.032 16.032 0 0 0 9 10.877a16.165 16.165 0 0 0 2.91-4.876L2 6V4h6V2h2zm7.5 10.885L16.253 16h2.492L17.5 12.885z">
+                        </path>
                       </svg>
                     </div>
                   </template>
                   <div class="language-list">
-                    <div
-                      class="language-item"
-                      v-for="lang in languages"
-                      :key="lang.value"
-                      @click="switchLanguage(lang)"
-                    >
+                    <div class="language-item" v-for="lang in languages" :key="lang.value"
+                      @click="switchLanguage(lang)">
                       {{ lang.label }}
                     </div>
                   </div>
                 </el-popover>
-                <div class="login" @click="jumpTo('login')">
+                <div class="login" @click="jumpTo('Login')">
                   <span>{{ $t("header.login") }}</span>
                 </div>
               </div>
@@ -82,16 +57,13 @@
         </div>
         <div class="menu-primary-nav-container">
           <ul class="menu">
-            <li class="menu-item" v-for="item in primaryNavs" :key="item.label">
+            <li class="menu-item" v-for="item in primaryNavs" :key="item.label" @click="jumpTo(item.name)">
               {{ item.label }}
             </li>
           </ul>
         </div>
         <div class="panel-collection">
-          <img
-            src="@/assets/images/layout/home-background.png"
-            alt=""
-          />
+          <img src="@/assets/images/layout/home-background.png" alt="" />
           <p class="panel-collection-title">UCS IBDP</p>
         </div>
       </div>
@@ -121,45 +93,35 @@ const state = reactive({
   primaryNavs: [
     {
       label: t("primaryNav.news"),
-      path: "",
+      name: "News",
     },
     {
       label: t("primaryNav.events"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.academics"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.research"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.healthCare"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.campusLife"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.admission"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.about"),
-      path: "",
-    },
-  ],
-  languages: [
-    {
-      label: t("language.chinese"),
-      value: "zh",
-    },
-    {
-      label: t("language.english"),
-      value: "en",
+      name: "",
     },
   ],
 });
@@ -169,77 +131,47 @@ const { primaryNavs, languages, languageVisible } = toRefs(state);
 const switchLanguage = (lang: any) => {
   locale.value = lang.value;
   languageVisible.value = false;
-  state.languages = [
-    {
-      label: t("language.chinese"),
-      value: "zh",
-    },
-    {
-      label: t("language.english"),
-      value: "en",
-    },
-  ];
   state.primaryNavs = [
     {
       label: t("primaryNav.news"),
-      path: "",
+      name: "News",
     },
     {
       label: t("primaryNav.events"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.academics"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.research"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.healthCare"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.campusLife"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.admission"),
-      path: "",
+      name: "",
     },
     {
       label: t("primaryNav.about"),
-      path: "",
+      name: "",
     },
   ];
 };
 // 页面跳转
-const jumpTo = (type: string) => {
-  switch (type) {
-    case "home":
-      router.push({
-        path: "/home",
-      });
-      break;
-    case "login":
-      router.push({
-        name: "Login",
-      });
-      break;
-    case "students":
-      // router.push({
-      //   name: "Students",
-      // });
-      // 或
-      router.push({
-        path: "/students",
-      });
-      break;
+const jumpTo = (name: string) => {
 
-    default:
-      break;
-  }
+  router.push({
+    name: name,
+  });
 };
 
 // header高度

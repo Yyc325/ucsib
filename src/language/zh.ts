@@ -1,8 +1,8 @@
 export default {
   // 用于语言切换
   language: {
-    chinese: "中文",
-    english: "英文",
+    chinese: "简体中文",
+    english: "English",
   },
   // 用于顶部导航栏
   header: {

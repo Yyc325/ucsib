@@ -1,6 +1,7 @@
 import { AppRouteRecordRaw } from "../type";
 import { ComponentCanstants } from "@/router/constants";
 import { HomeFilled, Menu } from "@element-plus/icons-vue";
+//无需权限的路由
 const localRoutes = [
   {
     path: "/",
@@ -26,6 +27,14 @@ const localRoutes = [
           title: "UCSIB",
         },
         component: ComponentCanstants["STUDENTS_PAGE"],
+      },
+      {
+        path: "news",
+        name: "News",
+        meta: {
+          title: "UCSIB",
+        },
+        component: ComponentCanstants["NEWS_PAGE"],
       },
     ],
   },
