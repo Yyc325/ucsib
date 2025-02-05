@@ -4,25 +4,28 @@
   min-width: 1226px;
   background-color: $bgPrimaryColor;
   text-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: auto;
   &-wrap {
     width: 100%;
     height: 100%;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &-header {
-    position: relative;
+    position: sticky;
+    left: 0;
+    top: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    height: 100vh;
     background-color: transparent;
     overflow: hidden;
-
     .brand-bar {
       position: fixed;
-
       top: 0;
       left: 0;
       display: flex;
@@ -31,6 +34,7 @@
       width: 100%;
       height: 50px;
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), #000);
+      background-color: #000;
       color: #fff;
       font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 19px;
@@ -147,6 +151,19 @@
       height: 50px;
       padding: 0 234px;
       z-index: 10001;
+      transition: all 0.3s ease-in-out;
+      &.is-top {
+        background-color: #fff;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+        .menu {
+          .menu-item {
+            color: #000;
+            &::after {
+              background-color: #000;
+            }
+          }
+        }
+      }
       .menu {
         display: flex;
         justify-content: center;
@@ -187,15 +204,13 @@
       }
     }
     .panel-collection {
-      position: fixed;
-      top: 0;
+      position: absolute;
       left: 0;
-      bottom: 0;
-      right: 0;
+      top: 0;
       z-index: 1;
       img {
         width: 100%;
-        height: 100%;
+        height: 100vh;
       }
       .panel-collection-title {
         position: absolute;
@@ -213,7 +228,6 @@
     width: 100%;
     z-index: 1000;
     background: #fff;
-
     &-content {
       flex: 1;
       height: 100%;

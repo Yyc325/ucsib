@@ -13,7 +13,7 @@ const localRoutes = [
     children: [
       {
         path: "home",
-        name: "home",
+        name: "Home",
         meta: {
           title: "UCSIB",
           icon: HomeFilled,

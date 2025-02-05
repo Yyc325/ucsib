@@ -1,6 +1,6 @@
 <template>
   <div class="i-layout">
-    <div class="i-layout-wrap">
+    <div class="i-layout-wrap" ref="containerRef">
       <div class="i-layout-header" :style="{
         minHeight: `${viewportHeight}px`,
       }">
@@ -55,7 +55,7 @@
             </nav>
           </div>
         </div>
-        <div class="menu-primary-nav-container">
+        <div class="menu-primary-nav-container" :class="{ 'is-top': isTop }">
           <ul class="menu">
             <li class="menu-item" v-for="item in primaryNavs" :key="item.label" @click="jumpTo(item.name)">
               {{ item.label }}
@@ -79,7 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, toRefs, onMounted, ref, onUnmounted } from "vue";
+import { reactive, computed, toRefs, onMounted, ref, onBeforeUnmount, watch } from "vue";
 import { useUser } from "@/hooks/useUser";
 import { useI18n } from "vue-i18n";
 
@@ -88,8 +88,20 @@ import { router } from "@/router";
 
 const { locale, t } = useI18n();
 
+const containerRef = ref<HTMLDivElement>();
 const state = reactive({
+  isTop: false, // 是否在顶部导航栏显示
   languageVisible: false,
+  languages: [
+    {
+      label: "简体中文",
+      value: "zh",
+    },
+    {
+      label: "English",
+      value: "en",
+    },
+  ],
   primaryNavs: [
     {
       label: t("primaryNav.news"),
@@ -125,7 +137,7 @@ const state = reactive({
     },
   ],
 });
-const { primaryNavs, languages, languageVisible } = toRefs(state);
+const { primaryNavs, languages, languageVisible, isTop } = toRefs(state);
 
 // 切换语言
 const switchLanguage = (lang: any) => {
@@ -168,11 +180,32 @@ const switchLanguage = (lang: any) => {
 };
 // 页面跳转
 const jumpTo = (name: string) => {
-
   router.push({
     name: name,
   });
 };
+
+// 监听视口滚动事件
+const handleScroll = (e: any) => {
+  console.log(e)
+  const scrollTop = e.target.scrollTop;
+  if (scrollTop > 100) {
+    state.isTop = true;
+  } else {
+    state.isTop = false;
+  }
+};
+
+// 监听路由变化 重置isTop
+watch(
+  () => router.currentRoute.value.name,
+  () => {
+    state.isTop = false;
+    console.log(containerRef.value)
+    // 重置内容区视口滚动高度
+    containerRef.value && containerRef.value.scrollTo({ top: 0 });
+  }
+);
 
 // header高度
 // 定义响应式变量来存储视口高度
@@ -188,11 +221,13 @@ onMounted(() => {
   updateViewportHeight();
   // 监听窗口大小变化事件
   window.addEventListener("resize", updateViewportHeight);
+  containerRef.value && containerRef.value.addEventListener("scroll", handleScroll);
 });
 
 // 组件卸载时移除事件监听器
-onUnmounted(() => {
+onBeforeUnmount(() => {
   window.removeEventListener("resize", updateViewportHeight);
+  containerRef.value && containerRef.value.removeEventListener("scroll", handleScroll);
 });
 </script>
 <style lang="scss" scoped>

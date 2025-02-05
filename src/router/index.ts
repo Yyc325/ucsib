@@ -13,9 +13,9 @@ export const router = createRouter({
   routes: routes,
 });
 
-export const  setupRouter =  (app: App<Element>) => {
+export const setupRouter = (app: App<Element>) => {
   router.beforeEach((to, from, next) => {
-      next();
+    next();
   });
   router.afterEach((to, from) => {
     if (typeof to.meta.title === "string") {
@@ -24,7 +24,6 @@ export const  setupRouter =  (app: App<Element>) => {
       // 提供一个默认值或者错误处理
       document.title = "首页";
     }
-    // window.location.reload();
   });
   app.use(router);
 };

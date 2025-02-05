@@ -15,5 +15,5 @@ export enum PageEnum {
 }
 // 免登 页面组件
 export const noPermissionsRoutes = {
-  LOGIN: () => import("@/views/Login/Login.vue"),
+  ACOUNT: () => import("@/views/account/account.vue"),
 };
