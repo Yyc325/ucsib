@@ -23,6 +23,8 @@ export enum PageEnum {
   BASE_ALUMNI_NAME = "alumni",
 }
 // 免登 页面组件
+// 免登 页面组件
 export const noPermissionsRoutes = {
   ACOUNT: () => import("@/views/account/account.vue"),
 };
+

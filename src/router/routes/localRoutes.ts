@@ -61,9 +61,10 @@ const localRoutes = [
         },
         component: ComponentCanstants["ALUMNI_PAGE"],
       }
->>>>>>> b8d8196 (新增空白页面)
     ],
   },
 ] as AppRouteRecordRaw[];
 
 export default localRoutes;
+
+
