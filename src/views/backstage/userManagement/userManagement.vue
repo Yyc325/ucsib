@@ -4,7 +4,7 @@
 			<div class="user-management-container">
 				<div class="user-management-search">
 					<div class="user-management-search-input">
-						<el-input v-model="queryParams.userName" :placeholder="t('tip.username')"></el-input>
+						<el-input v-model="queryParams.userName" :placeholder="t('tip.userName')"></el-input>
 						<el-input v-model="queryParams.phone" :placeholder="t('tip.phone')"></el-input>
 					</div>
 					<div class="user-management-search-btn">

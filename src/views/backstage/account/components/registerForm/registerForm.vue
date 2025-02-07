@@ -10,7 +10,7 @@
 			<div class="register-container-main">
 				<el-form class="register-form" ref="registerFormRef" :model="accountInfo" :rules="formRules">
 					<el-form-item prop="userName">
-						<el-input :placeholder="t('tip.username')" v-model="accountInfo.userName"></el-input>
+						<el-input :placeholder="t('tip.userName')" v-model="accountInfo.userName"></el-input>
 					</el-form-item>
 					<el-form-item prop="realName">
 						<el-input :placeholder="t('tip.name')" v-model="accountInfo.realName"></el-input>
@@ -60,7 +60,7 @@ const state = reactive({
 	} as any,
 	formRules: {
 		userName: [
-			{ required: true, message: t('tip.username'), trigger: 'blur' }
+			{ required: true, message: t('tip.userName'), trigger: 'blur' }
 		],
 		realName: [{ required: true, message: t('tip.name'), trigger: 'blur' }],
 		phone: [
