@@ -6,7 +6,7 @@ export const baseRoutes = [
   {
     path: "/login", // 路由的访问路径
     name: "Login", // 路由名称 可用于路由跳转
-    component: ComponentCanstants["ACOUNT"], // 组件动态引用
+    component: ComponentCanstants["ACCOUNT"], // 组件动态引用
     meta: {
       title: "登录页", // 页面标题
     },

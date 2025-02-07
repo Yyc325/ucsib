@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export default {
   language: {
     chinese: "简体中文",
@@ -10,12 +12,15 @@ export default {
     alumni: "Alumni",
     search: "Search",
     login: "Log In",
+    logout: "Log Out",
+    backstage: "Backstage",
   },
   primaryNav: {
     news: "News",
     events: "Events",
     academics: "Academics",
     research: "Research",
+    store: "Store",
     healthCare: "Store",
     campusLife: "Campus Life",
     admission: "Admission",
@@ -31,6 +36,7 @@ export default {
     secondLabel: "Create an account",
   },
   tip: {
+    username: "Please enter your username",
     account: "Please enter your account",
     phone: "Please enter your phone number",
     password: "Please enter your password",
@@ -100,10 +106,16 @@ export default {
     agreementNotChecked: "Please agree to the User Agreement",
     newPassword: "Please enter a new password",
     confirmNewPassword: "Please confirm the new password",
+    registerSuccess: "Registration successful, please log in",
+    logout: "Exit successfully",
   },
   buttonText: {
     signIn: "Sign In",
     signUp: "Sign Up",
     resetPassword: "Reset Password",
+  },
+  backstage: {
+    title: "Backstage",
+    userManagement: "User Management",
   },
 };

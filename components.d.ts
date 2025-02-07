@@ -9,20 +9,26 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
-    ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    BaseTable: typeof import('./src/components/ITable/components/BaseTable/BaseTable.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElPopover: typeof import('element-plus/es')['ElPopover']
-    ElProgress: typeof import('element-plus/es')['ElProgress']
-    ElRow: typeof import('element-plus/es')['ElRow']
-    ElTabPane: typeof import('element-plus/es')['ElTabPane']
-    ElTabs: typeof import('element-plus/es')['ElTabs']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTable: typeof import('element-plus/es')['ElTable']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    ISkeleton: typeof import('./src/components/ISkeleton/ISkeleton.vue')['default']
+    ITable: typeof import('./src/components/ITable/ITable.vue')['default']
     IVideoPlayer: typeof import('./src/components/IVideoPlayer/IVideoPlayer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TablePaging: typeof import('./src/components/ITable/components/TablePaging/TablePaging.vue')['default']
   }
 }

@@ -12,6 +12,8 @@ export default {
     alumni: "校友",
     search: "搜索",
     login: "登录",
+    logout: "退出登录",
+    backstage: "进入后台",
   },
   // 用于主要导航栏
   primaryNav: {
@@ -19,6 +21,7 @@ export default {
     events: "事件",
     academics: "学术",
     research: "研究",
+    healthCare: "商店",
     store: "商店",
     campusLife: "校园生活",
     admission: "入学",
@@ -34,6 +37,7 @@ export default {
     secondLabel: "立即注册",
   },
   tip: {
+    username: "请输入用户名",
     account: "请输入账号",
     phone: "请输入手机号",
     password: "请输入密码",
@@ -42,7 +46,7 @@ export default {
     forgetPassword: "忘记密码？",
     name: "请输入姓名",
     authCode: "请输入验证码",
-    signInNow: "立即登录",
+    signInNow: "已有账号，立即登录",
     agreement: "我已阅读并同意《用户协议》",
     sendCode: "获取验证码",
     reSendCode: "重新发送验证码",
@@ -54,11 +58,24 @@ export default {
     agreementNotChecked: "请阅读并同意用户协议",
     newPassword: "请输入新密码",
     confirmNewPassword: "请确认新密码",
+    registerSuccess: "注册成功，请登录",
+    logout: "退出成功",
   },
   buttonText: {
     signIn: "登录",
     signUp: "注册",
     resetPassword: "重置密码",
   },
+  backstage: {
+    title: "后台管理",
+    userManagement: {
+      title: "用户管理",
+      description: "用于管理所用用户信息",
+      table: {
+        user_name: "用户名",
+        real_name: "真实姓名",
+        phone: "手机号",
+      },
+    },
+  },
 };
-

@@ -6,6 +6,7 @@ import store from "@/store";
 interface UserStore {
   token?: string | null;
   userInfo: any;
+  phone: any;
 }
 
 const ls = createLocalStorage();
@@ -14,6 +15,7 @@ export const useUserStore = defineStore({
   state: (): UserStore => ({
     token: "",
     userInfo: null,
+    phone: "",
   }),
   getters: {
     getToken(): string {
@@ -21,6 +23,9 @@ export const useUserStore = defineStore({
     },
     getUserInfo(): any {
       return this.userInfo || ls.get("USER_INFO");
+    },
+    getPhone(): any {
+      return this.phone || ls.get("PHONE");
     },
   },
   actions: {
@@ -32,6 +37,10 @@ export const useUserStore = defineStore({
     setUserInfo(info) {
       this.userInfo = info;
       ls.set("USER_INFO", info);
+    },
+    setPhone(phone: string) {
+      this.phone = phone;
+      ls.set("PHONE", phone);
     },
   },
 });
