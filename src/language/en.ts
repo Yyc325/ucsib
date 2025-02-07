@@ -12,6 +12,7 @@ export default {
     login: "Log In",
   },
   primaryNav: {
+<<<<<<< HEAD
     news: "News",
     events: "Events",
     academics: "Academics",
@@ -58,5 +59,15 @@ export default {
     signIn: "Sign In",
     signUp: "Sign Up",
     resetPassword: "Reset Password",
+=======
+    news:"News",
+    events:"Events",
+    academics:"Academics",
+    research:"Research",
+    store:"Store",
+    campusLife:"Campus Life",
+    admission:"Admission",
+    about:"About",
+>>>>>>> b8d8196 (新增空白页面)
   },
 };

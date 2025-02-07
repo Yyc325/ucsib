@@ -29,6 +29,7 @@ const localRoutes = [
         component: ComponentCanstants["STUDENTS_PAGE"],
       },
       {
+<<<<<<< HEAD
         path: "news",
         name: "News",
         meta: {
@@ -36,6 +37,31 @@ const localRoutes = [
         },
         component: ComponentCanstants["NEWS_PAGE"],
       },
+=======
+        path: "faculty",
+        name: "faculty",
+        meta: {
+          title: "UCSIB",
+        },
+        component: ComponentCanstants["FACULTY_PAGE"],
+      },
+      {
+        path: "families",
+        name: "families",
+        meta: {
+          title: "UCSIB",
+        },
+        component: ComponentCanstants["FAMILIES_PAGE"],
+      },
+      {
+        path: "alumni",
+        name: "alumni",
+        meta: {
+          title: "UCSIB",
+        },
+        component: ComponentCanstants["ALUMNI_PAGE"],
+      }
+>>>>>>> b8d8196 (新增空白页面)
     ],
   },
 ] as AppRouteRecordRaw[];

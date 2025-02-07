@@ -11,4 +11,39 @@ export const baseRoutes = [
       title: "登录页", // 页面标题
     },
   },
+<<<<<<< HEAD
+=======
+  {
+    path: "/students",
+    name: "Students",
+    component: ComponentCanstants["STUDENTS"],
+    meta: {
+      title: "学生页",
+    },
+  },
+  {
+    path: "/faculty",
+    name: "faculty",
+    component: ComponentCanstants["FACULTY"],
+    meta: {
+      title: "教师页",
+    },
+  },
+  {
+    path: "/families",
+    name: "families",
+    component: ComponentCanstants["FAMILIES"],
+    meta: {
+      title: "家长页",
+    },
+  },
+  {
+    path: "/alumni",
+    name: "alumni",
+    component: ComponentCanstants["ALUMNI"],
+    meta: {
+      title: "校友页",
+    },
+  }
+>>>>>>> b8d8196 (新增空白页面)
 ] as AppRouteRecordRaw[];

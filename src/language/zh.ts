@@ -19,7 +19,7 @@ export default {
     events: "事件",
     academics: "学术",
     research: "研究",
-    healthCare: "商店",
+    store: "商店",
     campusLife: "校园生活",
     admission: "入学",
     about: "关于",
