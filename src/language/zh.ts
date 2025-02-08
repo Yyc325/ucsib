@@ -37,7 +37,7 @@ export default {
     secondLabel: "立即注册",
   },
   tip: {
-    username: "请输入用户名",
+    userName: "请输入用户名",
     account: "请输入账号",
     phone: "请输入手机号",
     password: "请输入密码",

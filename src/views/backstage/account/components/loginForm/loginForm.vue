@@ -37,6 +37,7 @@ import { router } from '@/router'
 import { useUserStoreWithOut } from '@/store/modules/userStore'
 import { reactive, toRefs, defineEmits, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import {ElMessage} from "element-plus";
 
 const emit = defineEmits(['update:activeComponent'])
 const { t } = useI18n()
@@ -91,8 +92,8 @@ const login = () => {
 						name: "User"
 					})
 				} else {
-					console.log(res)
-				}
+          ElMessage.warning(res.message)
+        }
 			}).catch((err: any) => {
 				console.log(err)
 			}).finally(() => {
