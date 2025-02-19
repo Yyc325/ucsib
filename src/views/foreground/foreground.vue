@@ -5,7 +5,7 @@
 	<div class="i-layout">
 		<div class="i-layout-wrap" ref="containerRef">
 			<div class="i-layout-header" :style="{
-				minHeight: `${viewportHeight}px`,
+				minHeight: router.currentRoute.value.name=='Home'?`${viewportHeight}px`:'100px',
 			}">
 				<div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
 					<div class="brand-bar__wrapper">
@@ -54,7 +54,7 @@
 										</div>
 									</div>
 								</el-popover>
-								<template v-if="getUserInfo">
+								<template v-if="getUserInfo&&getUserInfo.user_name">
 									<el-popover trigger="click" popper-style="z-index:99999!important">
 										<template #reference>
 											<div class="user-info">
@@ -83,14 +83,14 @@
 						</nav>
 					</div>
 				</div>
-				<div class="menu-primary-nav-container" :class="{ 'is-top': isTop }">
+				<div class="menu-primary-nav-container" :class="{ 'is-top': isTop || router.currentRoute.value.name!='Home' }">
 					<ul class="menu">
 						<li class="menu-item" v-for="item in primaryNavs" :key="item.label" @click="jumpTo(item.name)">
 							{{ item.label }}
 						</li>
 					</ul>
 				</div>
-				<div class="panel-collection">
+				<div class="panel-collection" v-if="router.currentRoute.value.name=='Home'">
 					<img src="@/assets/images/layout/home-background.png" alt="" />
 					<p class="panel-collection-title">UCS IBDP</p>
 				</div>
@@ -254,7 +254,6 @@ const entranceHandler = (entrance: any) => {
 
 // 监听视口滚动事件
 const handleScroll = (e: any) => {
-	console.log(e)
 	const scrollTop = e.target.scrollTop;
 	if (scrollTop > 100) {
 		state.isTop = true;

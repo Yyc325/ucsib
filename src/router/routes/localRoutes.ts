@@ -28,14 +28,14 @@ const localRoutes = [
             //     },
             //     component: ComponentCanstants["STUDENTS_PAGE"],
             // },
-            // {
-            //     path: "news",
-            //     name: "News",
-            //     meta: {
-            //         title: "UCSIB",
-            //     },
-            //     component: ComponentCanstants["NEWS_PAGE"],
-            // },
+            {
+                path: "news",
+                name: "News",
+                meta: {
+                    title: "UCSIB",
+                },
+                component: ComponentCanstants["NEWS_PAGE"],
+            },
             // {
             //     path: "faculty",
             //     name: "faculty",
