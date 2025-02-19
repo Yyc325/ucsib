@@ -6,37 +6,43 @@
     </div>
     <div class="news-content">
       <div class="news-content-left">
-        <!--        <div class="i-carousel">-->
-        <!--          <div class="i-carousel-wrapper">-->
-        <!--            <div class="i-carousel-content">-->
-        <!--              <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{-->
-        <!--              backgroundImage: `url(${item.url})`,-->
-        <!--            }">-->
-        <!--                <div class="i-carousel-desc">-->
-        <!--                  <span class="i-carousel-desc_date">{{item.date}}</span>-->
-        <!--                  <span class="i-carousel-desc_content">{{item.desc}}</span>-->
-        <!--                </div>-->
-        <!--              </div>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--          <div class="i-carousel-trigger">-->
-        <!--            <div class="i-carousel-trigger__dot" v-for="(item,index) in newsImage" :key="'dot'+index" :class="{-->
-        <!--              'is-active':isActiveDot==index-->
-        <!--            }"></div>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <el-carousel type="card" height="508px">
-          <el-carousel-item v-for="(item,index) in newsImage"  :key="index">
-            <div class="i-carousel-item" :style="{
-                          backgroundImage: `url(${item.url})`,
-                        }">
-              <div class="i-carousel-desc">
-                <span class="i-carousel-desc_date">{{ item.date }}</span>
-                <span class="i-carousel-desc_content">{{ item.desc }}</span>
+        <div class="i-carousel">
+          <div class="i-carousel-wrapper" ref="carouselWrapperRef">
+            <div class="previous-btn" @click="handlePrevious">
+              <el-icon><ArrowLeft /></el-icon>
+            </div>
+            <div class="next-btn" @click="handleNext">
+              <el-icon><ArrowRight /></el-icon>
+            </div>
+            <div class="i-carousel-content" :style="{transform: `translateX(-${408*isActiveDot}px)`}">
+              <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{
+              backgroundImage: `url(${item.url})`,
+            }" :class="{'is-focus':isFocusItem===item.url}" @click="handleFocus(item)">
+                <div class="i-carousel-desc">
+                  <span class="i-carousel-desc_date">{{item.date}}</span>
+                  <span class="i-carousel-desc_content">{{item.desc}}</span>
+                </div>
               </div>
             </div>
-          </el-carousel-item>
-        </el-carousel>
+          </div>
+<!--          <div class="i-carousel-trigger">-->
+<!--            <div class="i-carousel-trigger__dot" v-for="(item,index) in newsImage" :key="'dot'+index" :class="{-->
+<!--              'is-active':isActiveDot==index-->
+<!--            }"></div>-->
+<!--          </div>-->
+        </div>
+<!--        <el-carousel type="card" height="508px">-->
+<!--          <el-carousel-item v-for="(item,index) in newsImage"  :key="index">-->
+<!--            <div class="i-carousel-item" :style="{-->
+<!--                          backgroundImage: `url(${item.url})`,-->
+<!--                        }">-->
+<!--              <div class="i-carousel-desc">-->
+<!--                <span class="i-carousel-desc_date">{{ item.date }}</span>-->
+<!--                <span class="i-carousel-desc_content">{{ item.desc }}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </el-carousel-item>-->
+<!--        </el-carousel>-->
       </div>
       <div class="news-content-right">
         <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{
@@ -53,13 +59,19 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue';
-
+import {defineComponent, reactive, ref, toRefs} from 'vue';
+import {ArrowRight,ArrowLeft} from '@element-plus/icons-vue'
+import {ElMessage} from "element-plus";
 
 export default defineComponent({
   name: 'News',
+  components:{
+    ArrowRight,
+    ArrowLeft
+  },
   setup() {
     const state = reactive({
+      carouselWrapperRef:ref(),
       newsImage: [
         {
           date: "12/16",
@@ -98,10 +110,32 @@ export default defineComponent({
           url: 'https://website.xycloud.net.cn/images/e-sport.jpg'
         },
       ],
-      isActiveDot: 0
+      isActiveDot: 0,
+      isFocusItem:""
     })
+    // 处理轮播图 单项移动
+    const handleFocus = (item:any)=>{
+      state.isFocusItem = item.url
+    }
+    // 处理轮播图 向前
+    const handlePrevious = ()=>{
+      if(state.isActiveDot<=0){
+        return
+      }
+      state.isActiveDot = state.isActiveDot-1
+    }
+    // 处理轮播图 向后
+    const handleNext = ()=>{
+      if(state.isActiveDot>=state.newsImage.length-3){
+        return
+      }
+      state.isActiveDot = state.isActiveDot+1
+    }
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      handleFocus,
+      handlePrevious,
+      handleNext
     };
   },
 });
