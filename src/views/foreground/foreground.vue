@@ -139,10 +139,6 @@ const state = reactive({
 			name: "News",
 		},
 		{
-			label: t("primaryNav.events"),
-			name: "",
-		},
-		{
 			label: t("primaryNav.academics"),
 			name: "",
 		},
@@ -188,10 +184,6 @@ const switchLanguage = (lang: any) => {
 		{
 			label: t("primaryNav.news"),
 			name: "News",
-		},
-		{
-			label: t("primaryNav.events"),
-			name: "",
 		},
 		{
 			label: t("primaryNav.academics"),

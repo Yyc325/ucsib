@@ -17,7 +17,6 @@ export default {
   },
   primaryNav: {
     news: "News",
-    events: "Events",
     academics: "Academics",
     research: "Research",
     store: "Store",
@@ -65,7 +64,6 @@ export default {
     signUp: "Sign Up",
     resetPassword: "Reset Password",
     news:"News",
-    events:"Events",
     academics:"Academics",
     research:"Research",
     store:"Store",

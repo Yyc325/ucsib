@@ -18,7 +18,6 @@ export default {
   // 用于主要导航栏
   primaryNav: {
     news: "新闻",
-    events: "事件",
     academics: "学术",
     research: "研究",
     healthCare: "商店",
