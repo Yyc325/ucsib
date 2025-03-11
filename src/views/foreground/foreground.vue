@@ -92,7 +92,7 @@
 				</div>
 				<div class="panel-collection" v-if="router.currentRoute.value.name=='Home'">
 					<img src="@/assets/images/layout/home-background.png" alt="" />
-					<p class="panel-collection-title">UCS IBDP</p>
+					<p class="panel-collection-title">UCS IB</p>
 				</div>
 			</div>
 			<div class="i-layout-body">
