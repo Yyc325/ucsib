@@ -14,7 +14,7 @@
 								<!-- <img src="@/assets/images/layout/logo.png" alt="Logo" style="margin-right: 10px" /> -->
 								<img src="https://website.xycloud.net.cn/images/logo.png" alt="Logo"
 									style="margin-right: 10px" />
-								<span>UCS IBDP</span>
+								<span>UCS IB</span>
 							</span>
 						</div>
 						<nav class="menu-gateway-nav">
