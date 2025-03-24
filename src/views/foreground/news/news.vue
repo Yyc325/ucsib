@@ -14,7 +14,7 @@
             <div class="next-btn" @click="handleNext">
               <el-icon><ArrowRight /></el-icon>
             </div>
-            <div class="i-carousel-content" :style="{transform: `translateX(-${408*isActiveDot}px)`}">
+            <div class="i-carousel-content" :style="{transform: `translateX(-${380*isActiveDot}px)`}">
               <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{
               backgroundImage: `url(${item.url})`,
             }" :class="{'is-focus':isFocusItem===item.url}" @click="handleFocus(item)">
@@ -126,7 +126,7 @@ export default defineComponent({
     }
     // 处理轮播图 向后
     const handleNext = ()=>{
-      if(state.isActiveDot>=state.newsImage.length-3){
+      if(state.isActiveDot>=state.newsImage.length-2){
         return
       }
       state.isActiveDot = state.isActiveDot+1
@@ -143,4 +143,5 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import './news.scss';
+@import "news_mb";
 </style>

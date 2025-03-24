@@ -113,4 +113,5 @@ const forgetHandle = () => {
 
 <style lang="scss" scoped>
 @import './loginForm.scss';
+@import "loginForm_mb";
 </style>

@@ -5,7 +5,7 @@
 	<div class="i-layout">
 		<div class="i-layout-wrap" ref="containerRef">
 			<div class="i-layout-header" :style="{
-				minHeight: router.currentRoute.value.name=='Home'?`${viewportHeight}px`:'100px',
+				minHeight:router.currentRoute.value.name=='Home'?'100vh':'100px',
 			}">
 				<div class="brand-bar" :class="{ 'is-chinese': locale === 'zh' }">
 					<div class="brand-bar__wrapper">
@@ -36,7 +36,7 @@
 										{{ $t("header.search") }}
 									</span>
 								</div>
-								<el-popover trigger="hover" v-model:visible="languageVisible"
+								<el-popover trigger="click" v-model:visible="languageVisible"
 									popper-style="z-index:99999!important">
 									<template #reference>
 										<div class="switch-logo">
@@ -79,6 +79,21 @@
 										<span>{{ $t("header.login") }}</span>
 									</div>
 								</template>
+                <div class="collapse-menu">
+                  <div class="collapse-menu__trigger" @click.stop="openMenu">
+                      <i class="iconfont icon-caidan"></i>
+                  </div>
+                  <div class="collapse-menu__content" :class="{'is-active':collapseVisible}">
+                    <ul class="collapse-menu-list">
+                      <li class="menu-item" @click="jumpTo('Students')">
+                        {{ $t("header.student") }}
+                      </li>
+                      <li class="menu-item" @click="jumpTo('faculty')">{{ $t("header.faculty") }}</li>
+                      <li class="menu-item" @click="jumpTo('families')">{{ $t("header.families") }}</li>
+                      <li class="menu-item" @click="jumpTo('alumni')">{{ $t("header.alumni") }}</li>
+                    </ul>
+                  </div>
+                </div>
 							</div>
 						</nav>
 					</div>
@@ -172,9 +187,10 @@ const state = reactive({
 			label: t("header.logout"),
 			value: 'logout'
 		},
-	]
+	],
+  collapseVisible:false,
 });
-const { primaryNavs, languages, languageVisible, isTop, entrances } = toRefs(state);
+const { primaryNavs, languages, languageVisible, isTop, entrances,collapseVisible } = toRefs(state);
 
 // 切换语言
 const switchLanguage = (lang: any) => {
@@ -223,9 +239,10 @@ const switchLanguage = (lang: any) => {
 };
 // 页面跳转
 const jumpTo = (name: string) => {
-	router.push({
-		name: name,
-	});
+  router.push({
+    name: name,
+  });
+  closeMenu()
 };
 
 const entranceHandler = (entrance: any) => {
@@ -244,6 +261,14 @@ const entranceHandler = (entrance: any) => {
 	}
 }
 
+// 打开折叠菜单项
+const openMenu = ()=>{
+  state.collapseVisible = true
+}
+// 关闭折叠菜单弹窗
+const closeMenu = ()=>{
+  state.collapseVisible = false
+}
 // 监听视口滚动事件
 const handleScroll = (e: any) => {
 	const scrollTop = e.target.scrollTop;
@@ -267,27 +292,27 @@ watch(
 
 // header高度
 // 定义响应式变量来存储视口高度
-const viewportHeight = ref(window.innerHeight);
-
-// 定义一个函数用于更新视口高度
-function updateViewportHeight() {
-	viewportHeight.value = window.innerHeight;
-}
+// const viewportHeight = ref(window.innerHeight);
+//
+// // 定义一个函数用于更新视口高度
+// function updateViewportHeight() {
+// 	viewportHeight.value = window.innerHeight;
+// }
 
 // 组件挂载时立即调用一次以获取初始值
 onMounted(() => {
-	updateViewportHeight();
-	// 监听窗口大小变化事件
-	window.addEventListener("resize", updateViewportHeight);
+	// updateViewportHeight();
+  window.addEventListener("click", closeMenu);
 	containerRef.value && containerRef.value.addEventListener("scroll", handleScroll);
 });
 
 // 组件卸载时移除事件监听器
 onBeforeUnmount(() => {
-	window.removeEventListener("resize", updateViewportHeight);
+  window.removeEventListener("click", closeMenu);
 	containerRef.value && containerRef.value.removeEventListener("scroll", handleScroll);
 });
 </script>
 <style lang="scss" scoped>
 @import "./foreground.scss";
+@import "./foreground_mb.scss";
 </style>

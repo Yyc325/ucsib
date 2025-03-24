@@ -12,7 +12,7 @@
             data-index="3"
           >
             <header>
-              <h2 class="center">Beyond east or west, for all humanity</h2>
+              <h2 class="center header-text">Beyond east or west, for all humanity</h2>
             </header>
             <section
               class="panel theme--white"
@@ -93,4 +93,5 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import "./home";
+@import "./home_mb";
 </style>

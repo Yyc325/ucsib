@@ -114,4 +114,5 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import './account';
+@import "account_mb";
 </style>

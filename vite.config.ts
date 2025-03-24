@@ -13,7 +13,7 @@ import topLevelAwait from "vite-plugin-top-level-await";
 import vueJSX from "@vitejs/plugin-vue-jsx";
 // px2rem 配置参数
 const px2remOptions = {
-  rootValue: 10, //换算基数， 默认100 ,也就是1440px ，这样的话把根标签的字体规定为1rem为50px,这样就可以从设计稿上量出多少个px直接在代码中写多少px了
+  rootValue:  16, //换算基数， 默认100 ,也就是1440px ，这样的话把根标签的字体规定为1rem为50px,这样就可以从设计稿上量出多少个px直接在代码中写多少px了
   unitPrecision: 5, //允许REM单位增长到的十进制数字，其实就是精度控制
   // propWhiteList: [], // 默认值是一个空数组，这意味着禁用白名单并启用所有属性。
   // propBlackList: [], // 黑名单
