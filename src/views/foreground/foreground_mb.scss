@@ -1,9 +1,18 @@
 
 // 手机样式适配
-@media(max-width:575.98px){
+@media (max-width:575.98px){
   .i-layout{
     min-width: 100%;
+    padding-top: 100px;
+    background: #fff;
+    &.is-header-image-visible{
+      padding-top: 50px;
+      .i-layout-header{
+        height: 288px !important;
+      }
+    }
     .i-layout-header {
+      min-height: auto !important;
       .brand-bar{
         .brand-bar__wrapper{
           padding: 0 0 0 24px;
@@ -72,16 +81,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        height:100%;
         img{
-          width:auto;
+          width: auto;
+          height:100%;
         }
         .panel-collection-title{
-          font-size: 56px;
+          font-size: 32px;
         }
       }
     }
   }
-
 }
 // 较小平板屏幕适配
 @media(min-width:576px) and (max-width:767.98px){

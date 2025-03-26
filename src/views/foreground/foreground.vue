@@ -2,7 +2,9 @@
 @description: 前台页面(通用模板) 
 -->
 <template>
-	<div class="i-layout">
+	<div class="i-layout"  :class="{
+        'is-header-image-visible':router.currentRoute.value.name=='Home'
+			}">
 		<div class="i-layout-wrap" ref="containerRef">
 			<div class="i-layout-header" :style="{
 				minHeight:router.currentRoute.value.name=='Home'?'100vh':'100px',
@@ -106,7 +108,7 @@
 					</ul>
 				</div>
 				<div class="panel-collection" v-if="router.currentRoute.value.name=='Home'">
-					<img src="@/assets/images/layout/home-background.png" alt="" />
+					<img id="backgroundImage" src="@/assets/images/layout/home-background.png" alt="" />
 					<p class="panel-collection-title">UCS IB</p>
 				</div>
 			</div>
@@ -298,7 +300,6 @@ watch(
 // function updateViewportHeight() {
 // 	viewportHeight.value = window.innerHeight;
 // }
-
 // 组件挂载时立即调用一次以获取初始值
 onMounted(() => {
 	// updateViewportHeight();
