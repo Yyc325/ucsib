@@ -39,19 +39,18 @@
               <div class="activities-wrapper">
                 <div class="activities activitie-1">
                   <div class="info">
-                    <div class="title">12.4 Ulink Concert</div>
+                    <div class="title">Chinese Culture Week</div>
                     <div class="desc">
-                      Ten best singers in Ulink will take you explore the
-                      possibilities of music.”
+                      Bridging the World with Chinese Culture
                     </div>
                   </div>
                 </div>
                 <div class="activities-wrapper-right">
                   <div class="activities activitie-2">
                     <div class="info">
-                      <div class="title">12.3 Economic week</div>
+                      <div class="title">10.29 Basketball Match</div>
                       <div class="desc">
-                        Insight into the economy in everyday life
+                        Old vs. Young—Who Runs the Court?
                       </div>
                     </div>
                   </div>
