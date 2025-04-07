@@ -78,7 +78,7 @@
             width: 44%;
             height: 850px;
 
-            background: url(src/assets/images/layout/ChineseCultureWeek.png)
+            background: url("https://website.xycloud.net.cn/images/ChineseCultureWeek.png")
               no-repeat center center / cover;
 
             .info {
@@ -88,14 +88,14 @@
           &.activitie-2 {
             height: 385px;
 
-            background: url(src/assets/images/layout/Basketball.png)
+            background: url("https://website.xycloud.net.cn/images/Basketball.png")
               no-repeat center center / cover;
           }
           &.activitie-3 {
             height: 436px;
             // background: url("@/assets/images/layout/Halloween.png") no-repeat
             //   center center / cover;
-            background: url(src/assets/images/layout/Halloween.png)
+            background: url("https://website.xycloud.net.cn/images/Halloween1.png")
               no-repeat center center / cover;
           }
         }
