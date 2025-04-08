@@ -168,12 +168,12 @@ const entrances = computed(() => {
     {
       label: t("header.backstage"),
       value: 'backstage',
-      permission:['admin']
+      permission:['admin','teacher']
     },
     {
       label: t("header.logout"),
       value: 'logout',
-      permission:['admin','student','parent','teacher',""]
+      permission:['admin','student','parent','teacher',"",null]
     },
   ].filter(item=>item.permission.includes(getUserInfo.value.identity))
 })
