@@ -41,7 +41,8 @@ export default {
   idSelection:{
     student:"学生",
     teacher:"老师",
-    patriarch:"家长",
+    parent:"家长",
+    admin:"管理员",
     title:"选择身份进行登录"
   },
   tip: {
@@ -73,17 +74,28 @@ export default {
     signIn: "登录",
     signUp: "注册",
     resetPassword: "重置密码",
+    search:"搜索",
   },
   backstage: {
     title: "后台管理",
-    userManagement: {
+    User: {
       title: "用户管理",
       description: "用于管理所用用户信息",
       table: {
         user_name: "用户名",
         real_name: "真实姓名",
         phone: "手机号",
+        identity:"identity",
       },
     },
   },
+  message:{
+    success:"操作成功",
+    error:"操作失败",
+  },
+  messageBox:{
+    title:"提示信息",
+    confirm_prefix:"确认要将",
+    confirm_center:"设置为"
+  }
 };

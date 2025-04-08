@@ -2,8 +2,8 @@
 	<div class="i-skeleton">
 		<div class="i-skeleton-container">
 			<div class="i-skeleton-header">
-				<h1 class="i-skeleton-title">{{ router.currentRoute.value.meta.title }}</h1>
-				<div class="i-skeleton-desc">{{ router.currentRoute.value.meta.description }}</div>
+				<h1 class="i-skeleton-title">{{ $t(`backstage.${String(router.currentRoute.value.name)}.title`) }}</h1>
+				<div class="i-skeleton-desc">{{ $t(`backstage.${String(router.currentRoute.value.name)}.description`) }}</div>
 			</div>
 			<div class="i-skeleton-body">
 				<slot name="body"></slot>

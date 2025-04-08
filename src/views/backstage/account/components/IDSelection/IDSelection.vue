@@ -37,8 +37,8 @@ const selection = computed(()=>{
       type:'teacher'
     },
     {
-      label:t('idSelection.patriarch'),
-      type:'patriarch'
+      label:t('idSelection.parent'),
+      type:'parent'
     },
   ]
 })

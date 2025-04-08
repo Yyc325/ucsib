@@ -14,11 +14,11 @@
 					<el-input v-model="loginForm.password" type="password" :placeholder="t('tip.password')" clearable
 						show-password></el-input>
 				</el-form-item>
-				<el-form-item>
-					<el-radio-group v-model="identification">
-            <el-radio v-for="identity in selection" :key="identity.type" :label="identity.label" :value="identity.type"></el-radio>
-          </el-radio-group>
-				</el-form-item>
+<!--				<el-form-item>-->
+<!--					<el-radio-group v-model="identification">-->
+<!--            <el-radio v-for="identity in selection" :key="identity.type" :label="identity.label" :value="identity.type"></el-radio>-->
+<!--          </el-radio-group>-->
+<!--				</el-form-item>-->
 				<div class="account-form-sepline"></div>
 				<div class="account-form-func">
 					<!-- <span class="sign"> 记住密码 </span> -->
@@ -36,7 +36,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { admin_login } from '@/apis/account'
+import { admin_login } from '@/apis/backstage/account'
 import { useUser } from '@/hooks/useUser'
 import { router } from '@/router'
 import { useUserStoreWithOut } from '@/store/modules/userStore'
@@ -95,8 +95,8 @@ const selection = computed(()=>{
       type:'teacher'
     },
     {
-      label:t('idSelection.patriarch'),
-      type:'patriarch'
+      label:t('idSelection.parent'),
+      type:'parent'
     },
   ]
 })

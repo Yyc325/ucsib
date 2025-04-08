@@ -167,13 +167,15 @@ const entrances = computed(() => {
   return [
     {
       label: t("header.backstage"),
-      value: 'backstage'
+      value: 'backstage',
+      permission:['admin']
     },
     {
       label: t("header.logout"),
-      value: 'logout'
+      value: 'logout',
+      permission:['admin','student','parent','teacher',""]
     },
-  ]
+  ].filter(item=>item.permission.includes(getUserInfo.value.identity))
 })
 const barMenu = computed(() => {
   return [
@@ -238,9 +240,11 @@ const jumpTo = (name: string) => {
 const entranceHandler = (entrance: any) => {
   switch (entrance.value) {
     case "backstage":
+      // const url = router.resolve({path:'/backstage/user'}).href as any;
+      // window.open(url,"_blank");
       router.push({
-        name: "User",
-      });
+        name:"User"
+      })
       break;
     case "logout":
       exitAfter();
@@ -274,7 +278,6 @@ watch(
   () => router.currentRoute.value.name,
   () => {
     state.isTop = false;
-    console.log(containerRef.value)
     // 重置内容区视口滚动高度
     containerRef.value && containerRef.value.scrollTo({top: 0});
   }

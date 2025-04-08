@@ -45,7 +45,7 @@ import {ElMessage, FormInstance} from 'element-plus'
 import _ from 'lodash'
 import {reactive, toRefs, defineEmits, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
-import {admin_add} from '@/apis/account'
+import {admin_add} from '@/apis/backstage/account'
 
 const registerRef = ref<FormInstance>()
 const emit = defineEmits(['update:activeComponent'])

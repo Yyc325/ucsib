@@ -5,7 +5,8 @@ import { baseRoutes } from "./routes/baseRoutes";
 import { PageEnum } from "./constants/canstants";
 import { useUser } from "@/hooks/useUser";
 import backstageRoutes from "./routes/backstageRoutes";
-import { get_all_users } from "@/apis/backstage";
+import { get_all_users } from "@/apis/backstage/user";
+import {useI18n} from "vue-i18n";
 
 const routes = [...localRoutes, ...baseRoutes, ...backstageRoutes] as any[];
 const noPermissionsPath = [PageEnum.BASE_LOGIN, PageEnum.BASE_REGISTER] as any;

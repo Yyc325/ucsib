@@ -40,7 +40,8 @@ export default {
   idSelection:{
     student:"student",
     teacher:"teacher",
-    patriarch:"patriarch",
+    parent:"parent",
+    admin:"admin",
     title:"Select an identity to log in"
   },
   tip: {
@@ -81,10 +82,28 @@ export default {
     campusLife:"Campus Life",
     admission:"Admission",
     about:"About",
-
+    search:"Search",
   },
   backstage: {
     title: "Backstage",
-    userManagement: "User Management",
+    User: {
+      title:"User Management",
+      description:"Used to manage user information",
+      table:{
+        user_name:"username",
+        real_name:"realName",
+        identity:"identity",
+        phone:"phone",
+      }
+    },
   },
+  message:{
+    success:"Successful operation",
+    error:"Error",
+  },
+  messageBox:{
+    title:"Prompt Message",
+    confirm_prefix:"Are you sure you want to set",
+    confirm_center:"as"
+  }
 };

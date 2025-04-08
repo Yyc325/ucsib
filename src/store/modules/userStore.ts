@@ -13,19 +13,19 @@ const ls = createLocalStorage();
 export const useUserStore = defineStore({
   id: "app-user-store",
   state: (): UserStore => ({
-    token: "",
-    userInfo: null,
-    phone: "",
+    token: ls.get("TOKEN") || "",
+    userInfo:ls.get("USER_INFO")|| null,
+    phone: ls.get("PHONE") || "",
   }),
   getters: {
     getToken(): string {
-      return this.token || ls.get("TOKEN");
+      return this.token || "";
     },
     getUserInfo(): any {
-      return this.userInfo || ls.get("USER_INFO");
+      return this.userInfo ;
     },
     getPhone(): any {
-      return this.phone || ls.get("PHONE");
+      return this.phone;
     },
   },
   actions: {

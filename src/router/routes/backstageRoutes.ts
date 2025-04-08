@@ -4,7 +4,6 @@
 
 import { ComponentCanstants } from "../constants";
 import { AppRouteRecordRaw } from "../type";
-
 const backstageRoutes = [
   {
     path: "/backstage",

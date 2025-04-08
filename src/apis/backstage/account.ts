@@ -14,7 +14,7 @@ export const admin_add = (data: {
   phone: string;
 }) => {
   return Axios.request<any>({
-    url: "/admin_role/admin_add",
+    url: "/api/admin_role/admin_add",
     method: "POST",
     data,
   });
@@ -28,7 +28,7 @@ export const admin_add = (data: {
 
 export const admin_login = (data: { phone: string; password: string }) => {
   return Axios.request<any>({
-    url: "/admin_role/login",
+    url: "/api/admin_role/login",
     method: "POST",
     data,
   });

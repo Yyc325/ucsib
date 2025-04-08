@@ -10,7 +10,7 @@
 					<div class="logo">
 						<img src="https://website.xycloud.net.cn/images/logo.png" alt="">
 					</div>
-					<div class="name">后台管理</div>
+					<div class="name">{{ $t("backstage.title") }}</div>
 				</div>
 				<div class="i-layout-header-center">
 					<span></span>
@@ -31,11 +31,11 @@
 									<el-icon>
 										<component :is="menu.meta.icon"></component>
 									</el-icon>
-									<span>{{ menu.meta.title }}</span>
+									<span>{{ $t(`backstage.${menu.name}.title`) }}</span>
 								</template>
 								<el-menu-item v-for="menuItem in menu.children" @click="menuSelect(menuItem)"
 									:class="{ 'is-active': menuItem.name === router.currentRoute.value.name }">{{
-										menuItem.meta.title
+                    $t(`backstage.${menu.name}.title`)
 									}}</el-menu-item>
 							</el-sub-menu>
 							<el-menu-item v-else @click="menuSelect(menu)"
@@ -43,7 +43,7 @@
 								<el-icon>
 									<component :is="menu.meta.icon"></component>
 								</el-icon>
-								{{ menu.meta.title }}</el-menu-item>
+								{{ $t(`backstage.${menu.name}.title`) }}</el-menu-item>
 						</template>
 
 					</el-menu>
