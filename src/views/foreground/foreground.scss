@@ -257,6 +257,32 @@
       }
     }
   }
+  .i-layout-footer{
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background: #fff;
+    .i-layout-footer__record{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      img{
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      a{
+        font-size: 12px;
+        line-height: 24px;
+        &:hover{
+          text-decoration: underline;
+          color: #1d2129;
+        }
+      }
+    }
+  }
 }
 // 语言选择弹窗的样式
 .language-list {

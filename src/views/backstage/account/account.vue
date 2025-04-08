@@ -17,7 +17,7 @@
             <div class="login-container-right">
                 <div class="login-container-right-content">
                     <component :is="activeComponent" ref="loginFormRef"
-                        @update:activeComponent="handleActiveComponent" />
+                        v-model:activeComponent="activeComponent" v-model:identification="identification"/>
                 </div>
                 <div class="login-container-right-footer">
                     <div class="language-switch">
@@ -49,18 +49,20 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n";
+import { CaretBottom } from '@element-plus/icons-vue';
+import { router } from '@/router';
 import loginForm from './components/loginForm/loginForm.vue'
 import registerForm from './components/registerForm/registerForm.vue'
 import forgetForm from './components/forgetForm/forgetForm.vue';
-import { CaretBottom } from '@element-plus/icons-vue';
-import { router } from '@/router';
+import IDSelection from './components/IDSelection/IDSelection.vue';
 export default defineComponent({
     name: 'Account',
     components: {
         loginForm,
         registerForm,
         forgetForm,
-        CaretBottom
+        CaretBottom,
+      IDSelection
     },
     setup() {
         const { t, locale } = useI18n();
@@ -68,26 +70,26 @@ export default defineComponent({
         const state = reactive({
             activeComponent: 'loginForm',
             languageVisible: false,
-            languages: [
-                {
-                    label: "简体中文",
-                    value: "zh",
-                },
-                {
-                    label: "English",
-                    value: "en",
-                },
-            ]
+            identification:""
         })
+      const languages = computed(()=>{
+        return [
+          {
+            label: t('language.chinese'),
+            value: "zh",
+          },
+          {
+            label: t('language.english'),
+            value: "en",
+          },
+        ]
+      })
         const currentLanguage = computed(() => {
-            const { label } = state.languages.find((item) => item.value === locale.value) || {}
+            const { label } = languages.value.find((item) => item.value === locale.value) || {}
             return label
         })
         const login = () => {
             loginFormRef.value.login()
-        }
-        const handleActiveComponent = (name: string) => {
-            state.activeComponent = name
         }
         const switchLanguage = (lang: any) => {
             locale.value = lang.value;
@@ -101,11 +103,11 @@ export default defineComponent({
 
         return {
             t,
+            languages,
             ...toRefs(state),
             loginFormRef,
             currentLanguage,
             login,
-            handleActiveComponent,
             switchLanguage,
             backHome
         }

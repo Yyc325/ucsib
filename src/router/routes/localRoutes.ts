@@ -36,14 +36,14 @@ const localRoutes = [
                 },
                 component: ComponentCanstants["NEWS_PAGE"],
             },
-            // {
-            //     path: "faculty",
-            //     name: "faculty",
-            //     meta: {
-            //         title: "UCSIB",
-            //     },
-            //     component: ComponentCanstants["FACULTY_PAGE"],
-            // },
+            {
+                path: "about",
+                name: "about",
+                meta: {
+                    title: "About",
+                },
+                component: ComponentCanstants["ABOUT_PAGE"],
+            },
             // {
             //     path: "families",
             //     name: "families",

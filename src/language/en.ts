@@ -2,7 +2,7 @@ import { title } from "process";
 
 export default {
   language: {
-    chinese: "简体中文",
+    chinese: "Chinese (simplified)",
     english: "English",
   },
   header: {
@@ -20,6 +20,8 @@ export default {
     academics: "Academics",
     research: "Research",
     store: "Store",
+    college: "College application",
+    resource:"Resource",
     healthCare: "Store",
     campusLife: "Campus Life",
     admission: "Admission",
@@ -28,11 +30,18 @@ export default {
   login: {
     title: "Welcome to the school website",
     label: "Sign in",
+    reIdentity:"Select the login identity again"
   },
   register: {
     title: "Back to sign in",
     firstLabel: "No account?",
     secondLabel: "Create an account",
+  },
+  idSelection:{
+    student:"student",
+    teacher:"teacher",
+    patriarch:"patriarch",
+    title:"Select an identity to log in"
   },
   tip: {
     userName: "Please enter your username",
@@ -66,7 +75,9 @@ export default {
     news:"News",
     academics:"Academics",
     research:"Research",
-    store:"Store",
+    resource:"Resource",
+    store:"College application",
+    college:"College application",
     campusLife:"Campus Life",
     admission:"Admission",
     about:"About",

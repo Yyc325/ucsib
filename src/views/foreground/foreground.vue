@@ -119,6 +119,12 @@
 					</div>
 				</div>
 			</div>
+      <div class="i-layout-footer">
+        <div class="i-layout-footer__record">
+          <img src="https://website.xycloud.net.cn/images/ip_beian.png" alt="">
+          <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025116303号-1</a>
+        </div>
+      </div>
 		</div>
 	</div>
 </template>
@@ -159,25 +165,25 @@ const state = reactive({
 			label: t("primaryNav.academics"),
 			name: "",
 		},
+    {
+      label: t("primaryNav.campusLife"),
+      name: "",
+    },
 		{
-			label: t("primaryNav.research"),
+			label: t("primaryNav.resource"),
 			name: "",
 		},
-		{
-			label: t("primaryNav.store"),
-			name: "",
-		},
-		{
-			label: t("primaryNav.campusLife"),
-			name: "",
-		},
+		// {
+		// 	label: t("primaryNav.college"),
+		// 	name: "",
+		// },
 		{
 			label: t("primaryNav.admission"),
 			name: "",
 		},
 		{
 			label: t("primaryNav.about"),
-			name: "",
+			name: "about",
 		},
 	],
 	entrances: [

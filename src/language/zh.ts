@@ -2,7 +2,7 @@ export default {
   // 用于语言切换
   language: {
     chinese: "简体中文",
-    english: "English",
+    english: "英文",
   },
   // 用于顶部导航栏
   header: {
@@ -21,19 +21,28 @@ export default {
     academics: "学术",
     research: "研究",
     healthCare: "商店",
-    store: "商店",
+    store: "大学申请",
+    collegeApplication: "大学申请",
     campusLife: "校园生活",
+    resource:"资源",
     admission: "入学",
     about: "关于",
   },
   login: {
     title: "学校官网",
     label: "登录",
+    reIdentity:"重新选择登录身份"
   },
   register: {
     title: "返回登录",
     firstLabel: "没有账号？",
     secondLabel: "立即注册",
+  },
+  idSelection:{
+    student:"学生",
+    teacher:"老师",
+    patriarch:"家长",
+    title:"选择身份进行登录"
   },
   tip: {
     userName: "请输入用户名",

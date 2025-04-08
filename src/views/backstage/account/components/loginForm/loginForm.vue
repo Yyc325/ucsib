@@ -14,6 +14,11 @@
 					<el-input v-model="loginForm.password" type="password" :placeholder="t('tip.password')" clearable
 						show-password></el-input>
 				</el-form-item>
+				<el-form-item>
+					<el-radio-group v-model="identification">
+            <el-radio v-for="identity in selection" :key="identity.type" :label="identity.label" :value="identity.type"></el-radio>
+          </el-radio-group>
+				</el-form-item>
 				<div class="account-form-sepline"></div>
 				<div class="account-form-func">
 					<!-- <span class="sign"> 记住密码 </span> -->
@@ -35,7 +40,7 @@ import { admin_login } from '@/apis/account'
 import { useUser } from '@/hooks/useUser'
 import { router } from '@/router'
 import { useUserStoreWithOut } from '@/store/modules/userStore'
-import { reactive, toRefs, defineEmits, ref } from 'vue'
+import {reactive, toRefs, defineEmits, ref, computed} from 'vue'
 import { useI18n } from 'vue-i18n'
 import {ElMessage} from "element-plus";
 
@@ -74,9 +79,27 @@ const state = reactive({
 			}
 		]
 	},
-	isBtnLoading: false
+	isBtnLoading: false,
+  identification:"student"
 })
-const { loginForm, loginFormRules, isBtnLoading } = toRefs(state)
+const { loginForm, loginFormRules, isBtnLoading,identification } = toRefs(state)
+
+const selection = computed(()=>{
+  return [
+    {
+      label:t('idSelection.student'),
+      type:'student'
+    },
+    {
+      label:t('idSelection.teacher'),
+      type:'teacher'
+    },
+    {
+      label:t('idSelection.patriarch'),
+      type:'patriarch'
+    },
+  ]
+})
 const login = () => {
 	loginFormRef.value.validate(async (valid: boolean, filed: any) => {
 		if (valid) {
@@ -89,7 +112,7 @@ const login = () => {
 					setToken(res.token)
 					setPhone(loginForm.value.account)
 					router.push({
-						name: "User"
+						name: "Home"
 					})
 				} else {
           ElMessage.warning(res.message)
