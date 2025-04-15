@@ -19,11 +19,8 @@ export default {
   primaryNav: {
     news: "新闻",
     academics: "学术",
-    research: "研究",
-    healthCare: "商店",
-    store: "大学申请",
-    collegeApplication: "大学申请",
     campusLife: "校园生活",
+    collegeApplication: "大学申请",
     resource:"资源",
     admission: "入学",
     about: "关于",

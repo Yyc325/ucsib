@@ -18,12 +18,9 @@ export default {
   primaryNav: {
     news: "News",
     academics: "Academics",
-    research: "Research",
-    store: "Store",
+    campusLife: "Campus Life",
     college: "College application",
     resource:"Resource",
-    healthCare: "Store",
-    campusLife: "Campus Life",
     admission: "Admission",
     about: "About",
   },
