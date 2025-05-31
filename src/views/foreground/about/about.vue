@@ -12,7 +12,7 @@
             <p class="about-card-item__info">
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_1.jpg"/>
+                  <img src="https://website.xycloud.net.cn/images/about1.png"/>
                 <span class="about-card-item__image-description">
                   Learn More About News
                 </span>
@@ -22,39 +22,11 @@
               <span class="about-card-item__desc">Ulink IB News captures the vibrant pulse of our community, sharing stories of innovation, student triumphs, and global engagement. Stay updated on academic milestones, extracurricular achievements, and student-led initiatives that reflect our commitment to holistic education. From IB Diploma successes to sustainability projects, this section highlights how our students and faculty tackle challenges with creativity and a global mindset—always aligned with our mission to nurture future-ready leaders.</span>
             </p>
           </div>
-          <div class="about-card-item event">
-            <p class="about-card-item__info">
-              <span class="about-card-item__image">
-                <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_2.jpg"/>
-                <span class="about-card-item__image-description">
-                  Learn More About Events
-                </span>
-                </span>
-              </span>
-              <span class="about-card-item__title">Event</span>
-              <span class="about-card-item__desc">Ulink IB Events spark curiosity and connection through a rich tapestry of activities. Attend Model United Nations debates, cultural festivals celebrating our diverse student body, or TEDx talks by inspiring guest speakers. Whether it’s a science fair showcasing IB projects, community service drives, or alumni career panels, our events foster collaboration across cultures and disciplines, embodying the IB learner profile’s emphasis on open-mindedness and civic responsibility.</span>
-            </p>
-          </div>
-          <div class="about-card-item event">
-            <p class="about-card-item__info">
-              <span class="about-card-item__image">
-                <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_2.jpg"/>
-                <span class="about-card-item__image-description">
-                  Learn More About College application
-                </span>
-                </span>
-              </span>
-              <span class="about-card-item__title">College Application</span>
-              <span class="about-card-item__desc">The Campus Store supports student life with essentials that blend practicality and school spirit. Discover IB textbooks, eco-friendly stationery, and custom apparel featuring our school’s emblem. Proceeds fund student-led initiatives, from environmental clubs to peer tutoring programs. We prioritize sustainable suppliers, mirroring our community’s dedication to ethical choices—a small but meaningful way to live out the IB’s focus on global citizenship.</span>
-            </p>
-          </div>
           <div class="about-card-item campus">
             <p class="about-card-item__info">
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_4.jpg"/>
+                  <img src="https://website.xycloud.net.cn/images/about3.png"/>
                 <span class="about-card-item__image-description">
                   Learn More About Campus life
                 </span>
@@ -68,7 +40,7 @@
             <p class="about-card-item__info">
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_5.webp"/>
+                  <img src="https://website.xycloud.net.cn/images/about2.png"/>
                 <span class="about-card-item__image-description">
                   Learn More About Academic
                 </span>
@@ -83,7 +55,7 @@
             <p class="about-card-item__info">
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_6.webp"/>
+                  <img src="https://website.xycloud.net.cn/images/about5.png"/>
                 <span class="about-card-item__image-description">
                   Learn More About Resource
                 </span>
@@ -99,7 +71,7 @@
             <p class="about-card-item__info">
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
-                  <img src="https://website.xycloud.net.cn/images/about_7.jpg"/>
+                  <img src="https://website.xycloud.net.cn/images/about4.png"/>
                 <span class="about-card-item__image-description">
                   Learn More About Admission
                 </span>
