@@ -79,7 +79,7 @@
               </span>
               <span class="about-card-item__title">Admission</span>
               <span class="about-card-item__desc">
-                Ulink IB seeks passionate learners eager to thrive in our globally minded community. Our holistic admissions process values intellectual curiosity, multilingual abilities, and a commitment to the IB’s learner profile traits—thinkers, risk-takers, and caring individuals. Scholarships and financial aid ensure accessibility, while personalized campus tours and student ambassador programs help families envision life at 领科IB. Together, we build a community where every voice contributes to shaping a better world.
+                Ulink IB seeks passionate learners eager to thrive in our globally minded community. Our holistic admissions process values intellectual curiosity, multilingual abilities, and a commitment to the IB’s learner profile traits—thinkers, risk-takers, and caring individuals. Scholarships and financial aid ensure accessibility, while personalized campus tours and student ambassador programs help families envision life at UCSIB. Together, we build a community where every voice contributes to shaping a better world.
               </span>
             </p>
           </div>
