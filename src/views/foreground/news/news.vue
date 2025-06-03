@@ -74,16 +74,16 @@ export default defineComponent({
       carouselWrapperRef:ref(),
       newsImage: [
         {
-          date: "12/16",
-          desc: "New Year Talent Show",
+          date: "4/16",
+          desc: "IB Collaborative Sciences Project",
           position: "left",
-          url: 'https://website.xycloud.net.cn/images/new_year_talent_show.jpg'
+          url: 'https://website.xycloud.net.cn/images/about2.png'
         },
         {
-          date: "11/28",
-          desc: "Parents Meeting",
+          date: "3/25 - 3/39",
+          desc: "Chinese Culture Week",
           position: "left",
-          url: 'https://website.xycloud.net.cn/images/parents_meeting.jpg'
+          url: 'https://website.xycloud.net.cn/images/ChineseCultureWeek.png'
         },
         {
           date: "10/11",
