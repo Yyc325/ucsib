@@ -21,7 +21,7 @@
             </div>
             <nav class="menu-gateway-nav">
               <div class="menu-gateway-nav-container">
-                <!--                <div class="gateway-nav&#45;&#45;label">Information for:</div>-->
+                <div class="gateway-nav&#45;&#45;label">Information for:</div>
                 <ul class="menu">
 <!--                  暂时将空白页隐藏 @click="jumpTo(item.name)"-->
                   <li class="menu-item" v-for="item in barMenu" :key="item.name">
