@@ -80,7 +80,7 @@ export default defineComponent({
           url: 'https://website.xycloud.net.cn/images/about2.png'
         },
         {
-          date: "3/25 - 3/39",
+          date: "3/24 - 3/28",
           desc: "Chinese Culture Week",
           position: "left",
           url: 'https://website.xycloud.net.cn/images/ChineseCultureWeek.png'
