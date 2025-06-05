@@ -32,7 +32,7 @@
               data-type="call-to-action"
               id="more-about-ucs"
             >
-              <span>More about UCS IB</span>
+              <li class=button @click="$router.push('/about')">More about UCS IB</li>
             </section>
 
             <section class="panel" data-type="call-to-action">
@@ -81,6 +81,7 @@ import {
   ref,
   nextTick,
 } from "vue";
+import About from "../about/about.vue";
 
 export default defineComponent({
   name: "Home",
