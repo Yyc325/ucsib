@@ -15,6 +15,13 @@ export default {
     logout: "退出登录",
     backstage: "进入后台",
   },
+  home: {
+  slogan: "家国天下 无问西东",
+  commitment1: "我们致力于培养具有科学精神、人文素养和强健体魄的人才。",
+  commitment2: "",
+  moreAbout: "了解更多关于 UCS IB",
+  },
+
   // 用于主要导航栏
   primaryNav: {
     news: "新闻",

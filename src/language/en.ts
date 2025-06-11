@@ -15,6 +15,12 @@ export default {
     logout: "Log Out",
     backstage: "Backstage",
   },
+  home: {
+  slogan: "Beyond east or west, for all humanity",
+  commitment1: "We are committed to cultivating talents",
+  commitment2: "who possess a scientific spirit, humanistic literacy, and a strong physique.",
+  moreAbout: "More about UCS IB",
+  },
   primaryNav: {
     news: "News",
     academics: "Academics",
