@@ -73,7 +73,7 @@ const viteConfig = ({command, mode}: ConfigEnv): UserConfig => {
         },
         server: {
             hmr: true,
-            // host: "0.0.0.0",
+            host: "0.0.0.0",
             open: VITE_OPEN,
             port: VITE_PORT,
             proxy: createProxy(VITE_PROXY),
