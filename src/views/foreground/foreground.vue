@@ -300,6 +300,6 @@ onBeforeUnmount(() => {
 });
 </script>
 <style lang="scss" scoped>
-@import "./foreground.scss";
-@import "./foreground_mb.scss";
+@forward "./foreground.scss";
+@forward "./foreground_mb.scss";
 </style>

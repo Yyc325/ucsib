@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   min-width: 1226px;
-  background-color: $bgPrimaryColor;
+  background-color: #f3f5f5;
   &-wrap {
     height: 100%;
     display: flex;
@@ -23,13 +23,16 @@
       display: flex;
       align-items: center;
       .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 36px;
         height: 36px;
         margin-right: 16px;
         border-radius: 4px;
         overflow: hidden;
         img {
-          width: 100%;
+          height: 100%;
           object-fit: contain;
         }
       }

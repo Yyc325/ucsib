@@ -16,10 +16,19 @@ const backstageRoutes = [
       {
         path: "user",
         name: "User",
-        component: ComponentCanstants["USER_MANAGEMENT"],
+        component: ComponentCanstants["USER"],
         meta: {
           title: "用户管理",
           description: "用于管理所用用户信息",
+        },
+      },
+      {
+        path: "notice",
+        name: "Notice",
+        component: ComponentCanstants["NOTICE"],
+        meta: {
+          title: "UCS IB 公告",
+          description: "更多文化宣传，实时推送各类信息",
         },
       },
     ],

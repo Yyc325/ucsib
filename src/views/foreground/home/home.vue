@@ -92,6 +92,6 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "./home";
-@import "./home_mb";
+@forward "./home";
+@forward "./home_mb";
 </style>

@@ -13,5 +13,5 @@ export default  defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import 'faculty';
+@forwardort 'faculty';
 </style>

@@ -85,6 +85,33 @@ export default {
         identity:"identity",
       },
     },
+    Notice: {
+      title: "UCS IB 公告",
+      description: "更多文化宣传，实时推送各类信息",
+      table: {
+        title:"标题",
+        subtitle:"副标题",
+        content:"内容",
+        publisher:"发布人",
+        status:"状态",
+        publishTime:"发布时间",
+        createTime:"创建时间",
+      },
+      popup:{
+        cover:"上传封面",
+        uploadTip:"上传封面常见格式为JPG、PNG，部分平台支持GIF。尺寸因场景而异,需按平台要求调整分辨率（72-300dpi）和文件大小。",
+        required:{
+          title:"标题不能为空",
+          subtitle:"副标题不能为空",
+        },
+        tip:{
+          delete: {
+            title:"删除提示",
+            description:"确定要删除该公告吗？"
+          }
+        }
+      }
+    },
   },
   message:{
     success:"操作成功",
@@ -94,5 +121,20 @@ export default {
     title:"提示信息",
     confirm_prefix:"确认要将",
     confirm_center:"设置为"
+  },
+  operator:{
+    add:'新增',
+    publish:'发布',
+    edit:'编辑',
+    delete:'删除',
+    saveAndCreate:'保存并新增',
+    submit:"提交",
+    cancel:"取消",
+    confirm:"确定",
+  },
+  component:{
+    table:{
+      empty:"暂无数据"
+    }
   }
 };

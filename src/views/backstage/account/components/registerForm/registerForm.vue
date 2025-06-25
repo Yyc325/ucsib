@@ -142,6 +142,6 @@ const backLogin = () => {
 }
 </script>
 <style lang="scss" scoped>
-@import './registerForm.scss';
-@import './registerForm_mb.scss';
+@forward './registerForm.scss';
+@forward './registerForm_mb.scss';
 </style>

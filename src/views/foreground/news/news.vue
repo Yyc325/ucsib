@@ -142,6 +142,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import './news.scss';
-@import "news_mb";
+@forward './news.scss';
+@forward "news_mb";
 </style>

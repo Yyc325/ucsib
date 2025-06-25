@@ -133,5 +133,5 @@ const backLogin = () => {
 }
 </script>
 <style lang="scss" scoped>
-@import './forgetForm.scss';
+@forward './forgetForm.scss';
 </style>

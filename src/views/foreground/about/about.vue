@@ -13,7 +13,7 @@
               <span class="about-card-item__image">
                 <span class="about-card-item__image-show">
                   <img src="https://website.xycloud.net.cn/images/about1.png"/>
-                <span class="about-card-item__image-description">
+                <span class="about-card-item__image-description" @click="$router.push('/news')">
                   Learn More About News
                 </span>
                 </span>
@@ -94,6 +94,6 @@
 </script>
 
 <style scoped lang="scss">
-@import "about";
-@import "about_mb";
+@forward "about";
+@forward "about_mb";
 </style>

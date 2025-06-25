@@ -59,7 +59,7 @@ $homeIconColor: var(--home-icon-color, #b6cef9);
 $shadowColor: var(--shadow-color, #00000019);
 
 // 根标签字体大小
-$rootFontSize: var(--root-font-size);
+$rootFontSize: var(--root-font-size,14px);
 
 // 背景色 -
 $bgInfoColor: var(--bg-info-color, #f3f3f3);

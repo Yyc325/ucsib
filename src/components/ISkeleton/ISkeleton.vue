@@ -9,6 +9,7 @@
 				<slot name="body"></slot>
 			</div>
 		</div>
+    <slot name="popup"></slot>
 	</div>
 </template>
 
@@ -32,5 +33,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import './ISkeleton.scss';
+@forward './ISkeleton.scss';
 </style>

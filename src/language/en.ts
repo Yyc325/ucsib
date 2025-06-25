@@ -84,7 +84,7 @@ export default {
   backstage: {
     title: "Backstage",
     User: {
-      title:"User Management",
+      title:"User",
       description:"Used to manage user information",
       table:{
         user_name:"username",
@@ -93,6 +93,33 @@ export default {
         phone:"phone",
       }
     },
+    Notice:{
+      title:"Notice",
+      description:"More cultural promotion and real-time push of various types of information",
+      table:{
+        title:"Title",
+        subtitle:"Subtitle",
+        content:"Content",
+        publisher:"Publisher",
+        status:"Status",
+        publishTime:"Publish Time",
+        createTime:"Create Time",
+      },
+      popup:{
+        cover:"Upload Cover",
+        uploadTip:"The common formats for uploading covers are JPG and PNG, and some platforms support GIF. The size varies by scene. The resolution (72-300dpi) and file size need to be adjusted according to the platform requirements.",
+        required:{
+          title:"Title is required",
+          subtitle:"Subtitle is required",
+        },
+        tip:{
+          delete: {
+            title:"Delete Tip",
+            description:"Do you really want to remove this announcement?"
+          }
+        }
+      }
+    }
   },
   message:{
     success:"Successful operation",
@@ -102,5 +129,19 @@ export default {
     title:"Prompt Message",
     confirm_prefix:"Are you sure you want to set",
     confirm_center:"as"
+  },
+  operator:{
+    add:'Create',
+    publish:'Publish',
+    edit:'Edit',
+    delete:'Delete',
+    saveAndCreate:'Save And Create',
+    submit:"Submit",
+    cancel:"Cancel"
+  },
+  component:{
+    table:{
+      empty:"No Data"
+    }
   }
 };

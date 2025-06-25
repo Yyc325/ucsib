@@ -20,5 +20,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import './students.scss';
+@forward './students.scss';
 </style>

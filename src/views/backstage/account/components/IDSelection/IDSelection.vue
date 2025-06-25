@@ -53,5 +53,5 @@ const selected_handle = (selection:any)=>{
 </script>
 
 <style scoped lang="scss">
-@import "IDSelection";
+@forward "IDSelection";
 </style>

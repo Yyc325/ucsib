@@ -5,17 +5,13 @@
     padding: 1px 16px;
   }
   &__inner {
-    min-height: 40px;
+    min-height: 32px;
     border: none;
     box-shadow: none;
     height: 100%;
     line-height: inherit;
     &::-webkit-input-placeholder {
-      color: $textAssistColor;
-    }
-
-    &:focus {
-      background-color: #f4f5f9;
+      color: #869096;
     }
   }
 }

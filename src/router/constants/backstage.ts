@@ -7,10 +7,15 @@
 const BACKSTAGE_LAYOUT = () => import("@/views/backstage/backstage.vue");
 
 // 用户管理
-const USER_MANAGEMENT = () =>
-  import("@/views/backstage/userManagement/userManagement.vue");
+const USER = () =>
+    import("@/views/backstage/user/user.vue");
+
+// 公告管理
+const NOTICE = () =>
+    import("@/views/backstage/notice/notice.vue");
 
 export default {
-  BACKSTAGE_LAYOUT,
-  USER_MANAGEMENT,
+    BACKSTAGE_LAYOUT,
+    USER,
+    NOTICE
 };

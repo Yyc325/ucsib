@@ -135,6 +135,6 @@ const forgetHandle = () => {
 </script>
 
 <style lang="scss" scoped>
-@import './loginForm.scss';
-@import "loginForm_mb";
+@forward './loginForm.scss';
+@forward "loginForm_mb";
 </style>

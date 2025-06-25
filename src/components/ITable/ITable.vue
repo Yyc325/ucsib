@@ -60,5 +60,5 @@ onMounted(() => {
 
 </script>
 <style scoped lang="scss">
-@import './ITable.scss';
+@forward './ITable.scss';
 </style>

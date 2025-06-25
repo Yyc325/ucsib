@@ -45,5 +45,5 @@ const handleCurrentChange = (val: number) => {
 }
 </script>
 <style scoped lang="scss">
-@import './TablePaging.scss';
+@forward './TablePaging.scss';
 </style>
