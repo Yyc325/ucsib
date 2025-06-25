@@ -17,7 +17,7 @@
 				</div>
 				<div class="i-layout-header-right">
 					<div class="info-item username">
-<!--						{{ getUserInfo.user_name || "" }}-->
+						{{ getUserInfo.user_name || "" }}
 					</div>
 					<div class="loginout" @click="loginOutHandle">退出</div>
 				</div>

@@ -17,22 +17,22 @@ export const router = createRouter({
 
 export const setupRouter = (app: App<Element>) => {
   router.beforeEach(async (to, from, next) => {
-    // const { getToken, getPhone, setUserInfo, getUserInfo } = useUser();
-    // if (getToken.value) {
-    //   if (!getUserInfo.value) {
-    //     const userInfo = await get_all_users({ phone: getPhone.value });
-    //     if (userInfo.status === "success" && userInfo.data.length) {
-    //       setUserInfo(userInfo.data[0]);
-    //     }
-    //   }
-    //   if (to.path === PageEnum.ROOT_ROUTE || to.path === PageEnum.BASE_LOGIN) {
-    //     next(PageEnum.BASE_HOME);
-    //   } else {
+    const { getToken, getPhone, setUserInfo, getUserInfo } = useUser();
+    if (getToken.value) {
+      if (!getUserInfo.value) {
+        const userInfo = await get_all_users({ phone: getPhone.value });
+        if (userInfo.status === "success" && userInfo.data.length) {
+          setUserInfo(userInfo.data[0]);
+        }
+      }
+      if (to.path === PageEnum.ROOT_ROUTE || to.path === PageEnum.BASE_LOGIN) {
+        next(PageEnum.BASE_HOME);
+      } else {
         next();
-    //   }
-    // } else {
-    //   next();
-    // }
+      }
+    } else {
+      next();
+    }
   });
   router.afterEach((to, from) => {
     if (typeof to.meta.title === "string") {
