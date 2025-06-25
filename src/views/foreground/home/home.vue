@@ -12,7 +12,7 @@
             data-index="3"
           >
             <header>
-              <h2 class="center header-text">Beyond east or west, for all humanity</h2>
+              <h2 class="center header-text">{{ $t('home.slogan') }}</h2>
             </header>
             <section
               class="panel theme--white"
@@ -20,10 +20,9 @@
               id="position-stmt-1"
               data-width="full"
             >
-              <p>We are committed to cultivating talents</p>
+              <p>{{ $t('home.commitment1') }}</p>
               <p>
-                who possess a scientific spirit, humanistic literacy, and a
-                strong physique.
+                {{ $t('home.commitment2') }}
               </p>
             </section>
             <!-- panel  -->
@@ -32,7 +31,7 @@
               data-type="call-to-action"
               id="more-about-ucs"
             >
-              <li class=button @click="$router.push('/about')">More about UCS IB</li>
+              <li class=button @click="$router.push('/about')">{{ $t('home.moreAbout')}}</li>
             </section>
 
             <section class="panel" data-type="call-to-action">
