@@ -30,6 +30,15 @@ export default {
     admission: "Admission",
     about: "About",
   },
+  foreground:{
+    academics:{
+      course:{
+        preIb:'Pre-IB Courses',
+        ibdp:'IBDP Courses',
+        ibdpCore:'IBDP Core Topics'
+      }
+    }
+  },
   login: {
     title: "Welcome to the school website",
     label: "Sign in",

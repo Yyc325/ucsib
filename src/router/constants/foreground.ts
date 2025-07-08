@@ -8,10 +8,14 @@ const STUDENTS_PAGE = () => import("@/views/foreground/students/students.vue");
 const NEWS_PAGE = () => import("@/views/foreground/news/news.vue");
 // 关于
 const ABOUT_PAGE = () => import("@/views/foreground/about/about.vue");
+// 学术研究
+const ACADEMIC_PAGE = ()=> import("@/views/foreground/academics/academics.vue")
+
 export default {
   FOREGROUND_LAYOUT,
   HOME_PAGE,
   STUDENTS_PAGE,
   NEWS_PAGE,
-  ABOUT_PAGE
+  ABOUT_PAGE,
+  ACADEMIC_PAGE
 };

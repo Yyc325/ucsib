@@ -1,0 +1,158 @@
+.academics{
+  text-shadow: none;
+  .academics-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 1500px;
+    margin: 0 auto;
+    .academics-header{
+      width: 100%;
+      padding: 16px 0;
+      margin-bottom: 80px;
+      border-bottom: 8px solid #000000;
+      text-align: center;
+      .academics-header-title{
+        font-size: 108px;
+        font-weight: bold;
+      }
+    }
+    .academics-body{
+      width: 100%;
+      .academics-section{
+        margin-bottom: 96px;
+        &.swapper{
+          width: 100%;
+          margin-bottom: 44px;
+          border-radius: 8px;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+        }
+        &.theme-tabs{
+          .theme-tabs__inner{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 26px 64px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            .theme-tab{
+              .theme-tab__label{
+                width: 320px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+        &.ibdp{
+          .academics-section__body{
+            .section-card{
+              .section-card__content{
+                top: 0;
+                left: 0;
+                padding-left: 128px;
+              }
+              .section-card__preview{
+                right: 0;
+                left: auto;
+              }
+            }
+          }
+        }
+        &.ibdp-core{
+          width: 100%;
+          .academics-section__body{
+            .ibdp-core-box{
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 558px;
+              background-color: #f4f4f4;
+              padding: 22px 72px;
+              .ibdp-core-node{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 197px;
+                height: 59px;
+                border-radius: 59px;
+                background-color: #fff;
+                margin-bottom: 109px;
+                &.items-end{
+                  align-self: flex-end;
+                }
+              }
+            }
+          }
+        }
+        .academics-section__title{
+          text-align: center;
+          font-size: 56px;
+          font-weight: 600;
+          margin-bottom: 68px;
+          margin-top: 44px;
+        }
+        .academics-section__body{
+          .section-card{
+            width: 100%;
+            position: relative;
+            height:666px ;
+            .section-card__content{
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 946px;
+              height:100%;
+              padding: 58px 0 58px 190px;
+              background-color: #DDE5EF;
+              .section-card__inner{
+                .section-card__title{
+                  font-size: 48px;
+                  font-weight: 600;
+                  line-height: 64px;
+                  margin-bottom: 16px;
+                }
+                .section-card__desc{
+                  width: 402px;
+                  font-size: 36px;
+                  line-height: 52px;
+                  margin-bottom: 46px;
+                }
+                .section-card__link{
+                  span{
+                    color: #1a87f8;
+                    font-size: 36px;
+                    line-height: 52px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+            .section-card__preview{
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              display: flex;
+              justify-content: center;
+              width: 694px;
+              height: 445px;
+              overflow: hidden;
+              border-radius: 8px;
+              img{
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

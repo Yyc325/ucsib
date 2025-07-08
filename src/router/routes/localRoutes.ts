@@ -44,14 +44,14 @@ const localRoutes = [
                 },
                 component: ComponentCanstants["ABOUT_PAGE"],
             },
-            // {
-            //     path: "families",
-            //     name: "families",
-            //     meta: {
-            //         title: "UCSIB",
-            //     },
-            //     component: ComponentCanstants["FAMILIES_PAGE"],
-            // },
+            {
+                path: "academics",
+                name: "Academics",
+                meta: {
+                    title: "Academics",
+                },
+                component: ComponentCanstants["ACADEMIC_PAGE"],
+            },
             // {
             //     path: "alumni",
             //     name: "alumni",

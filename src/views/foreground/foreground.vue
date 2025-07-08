@@ -204,7 +204,7 @@ const primaryNavs = computed(() => {
     },
     {
       label: t("primaryNav.academics"),
-      name: "",
+      name: "Academics",
     },
     {
       label: t("primaryNav.campusLife"),
