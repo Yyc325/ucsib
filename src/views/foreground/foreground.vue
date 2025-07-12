@@ -14,7 +14,7 @@
             <div class="info">
 							<span class="logo" @click="jumpTo('Home')" style="display: flex; align-items: center">
 								<!-- <img src="@/assets/images/layout/logo.png" alt="Logo" style="margin-right: 10px" /> -->
-								<img src="https://website.xycloud.net.cn/images/logo1.png" alt="Logo"
+								<img src="https://website.xycloud.net.cn/images/logo.png" alt="Logo"
                      style="margin-right: 10px"/>
 								<span>UCS IB</span>
 							</span>
