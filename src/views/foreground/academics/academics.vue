@@ -9,7 +9,7 @@
       <div class="academics-body">
         <section class="academics-section swapper">
           <div class="swapper-inner">
-            <img src="https://static.canva.cn/web/images/87e22a62965f141aa08e93699b0b3527.jpg" alt="">
+            <img src="https://www.ulink.cn/wp-content/uploads/2024/12/ib-profile-scaled.jpg" alt="">
           </div>
         </section>
         <section class="academics-section theme-tabs">
