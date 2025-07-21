@@ -58,8 +58,12 @@
                 padding-left: 128px;
               }
               .section-card__preview{
-                right: 0;
+                right: -20px;
                 left: auto;
+              }
+              .section-card__preview1{
+                right: auto;
+                left: 300px;
               }
             }
           }
@@ -78,14 +82,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 197px;
-                height: 59px;
-                border-radius: 59px;
+                width: 250px;
+                height: 1000px;
+                border-radius: 20px;
                 background-color: #fff;
-                margin-bottom: 109px;
+                margin-bottom: 70px;
                 &.items-end{
                   align-self: flex-end;
                 }
+              }
+              .ibdp-core-text {
+                font-size: 25px;
+                line-height: 24px;
+                color: #333;
+                position: relative;
+                top: -50px; /* 上移10px */
+                margin-bottom: 0px; /* 添加底部间距 */ 
               }
             }
           }
@@ -118,16 +130,16 @@
                   margin-bottom: 16px;
                 }
                 .section-card__desc{
-                  width: 402px;
-                  font-size: 36px;
-                  line-height: 52px;
+                  width: 700px;
+                  font-size: 18px;
+                  line-height: 35px;
                   margin-bottom: 46px;
                 }
                 .section-card__link{
                   span{
                     color: #1a87f8;
                     font-size: 36px;
-                    line-height: 52px;
+                    line-height: 20px;
                     text-decoration: underline;
                     cursor: pointer;
                   }
@@ -141,7 +153,23 @@
               transform: translateY(-50%);
               display: flex;
               justify-content: center;
-              width: 694px;
+              width: 700px;
+              height: 445px;
+              overflow: hidden;
+              border-radius: 8px;
+              img{
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+            .section-card__preview1{
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              display: flex;
+              justify-content: center;
+              width: 700px;
               height: 445px;
               overflow: hidden;
               border-radius: 8px;
