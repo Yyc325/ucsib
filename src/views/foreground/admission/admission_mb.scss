@@ -1,0 +1,60 @@
+// 手机样式适配
+@media(max-width:575.98px){
+  a{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .admission {
+    .admission-container {
+      width: 370px;
+
+      .admission-header {
+        border-width: 2px;
+        margin-bottom: 40px;
+
+        .admission-header-title {
+          font-size: 30px;
+        }
+      }
+
+      .admission-body {
+        width: 100%;
+        .preview-video{
+          height: 196px !important;
+          margin-bottom: 24px !important;
+          .preview-video__empty{
+            font-size: 32px !important;
+          }
+        }
+        .admission-section{
+          .admission-section__title{
+            font-size: 24px !important;
+            padding: 16px 0;
+          }
+          .faq-list{
+            font-size: 16px !important;
+            line-height: 24px !important;
+            margin-bottom: 24px !important;
+          }
+          .member-cards{
+            .member-card{
+              margin-right: 32px !important;
+              .member-card__information{
+                font-size: 16px !important;
+                line-height: 24px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

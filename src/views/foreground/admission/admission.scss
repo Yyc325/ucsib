@@ -1,0 +1,130 @@
+.admission{
+  text-shadow: none;
+  .admission-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 1500px;
+    margin: 0 auto;
+    .admission-header{
+      width: 100%;
+      padding: 16px 0;
+      margin-bottom: 80px;
+      border-bottom: 8px solid #000000;
+      text-align: center;
+      .admission-header-title{
+        font-size: 108px;
+        font-weight: bold;
+      }
+    }
+    .admission-body{
+      width: 100%;
+      .admission-section{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 52px;
+        &.preview-video{
+          width: 100%;
+          height: 700px;
+          border-radius: 16px;
+          background-color: #f4f4f4;
+          .preview-video__empty{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 108px;
+            font-weight: 600;
+            color: #000000;
+          }
+        }
+        &.faq{
+          align-items: center;
+          .admission-section__content{
+            align-items: center;
+            .faq-list{
+              font-weight: 600;
+              font-size: 32px;
+              line-height: 48px;
+              margin-bottom: 52px;
+              .faq-item{
+
+              }
+            }
+            .online-consultation{
+              width: 100%;
+              display: flex;
+              justify-content: center;
+            }
+          }
+        }
+        &.team-member{
+          align-items: center;
+          .member-cards{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 32px;
+            .member-card{
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              margin-right: 84px;
+              &:last-child{
+                margin-right: 0 !important;
+              }
+              .member-card__avatar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                aspect-ratio: 1/1;
+                background-color: #f4f4f4;
+                img{
+                  width: 100%;
+                  object-fit: cover;
+                }
+              }
+              .member-card__information{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 32px;
+                line-height: 48px;
+
+              }
+            }
+          }
+        }
+        .admission-section__title{
+          padding: 32px 0 24px 0;
+          font-size: 56px;
+          font-weight: 600;
+        }
+        .admission-section__content{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          .link-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .link-item{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+a{
+  text-align: left;
+  text-decoration: underline;
+  color: #1a87f8;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
