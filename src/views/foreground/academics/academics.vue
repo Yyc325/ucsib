@@ -74,6 +74,39 @@
             </div>
           </div>
         </section>
+        <section class="academics-section pre-ib">
+          <div class="academics-section__title">{{t('foreground.academics.course.preIb')}}</div>
+          <div class="academics-section__body">
+            <div class="academics-section__article">
+              <p class="article-content">
+                Brief description of this pageBrief description of this page<br />
+                Brief description of this pageBrief description of this page<br />
+                Brief description of this pageBrief description of this page<br />
+                Brief description of this pageBrief description of this page<br />
+              </p>
+              <div class="image-cards">
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+                <div class="image-card">
+                  <img src="https://website.xycloud.net.cn/images/empty-image.webp" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
