@@ -52,14 +52,14 @@ const localRoutes = [
                 },
                 component: ComponentCanstants["ACADEMIC_PAGE"],
             },
-            // {
-            //     path: "alumni",
-            //     name: "alumni",
-            //     meta: {
-            //         title: "UCSIB",
-            //     },
-            //     component: ComponentCanstants["ALUMNI_PAGE"],
-            // }
+            {
+                path: "admission",
+                name: "Admission",
+                meta: {
+                    title: "UCSIB",
+                },
+                component: ComponentCanstants["ADMISSION_PAGE"],
+            }
         ],
     },
 ] as AppRouteRecordRaw[];
