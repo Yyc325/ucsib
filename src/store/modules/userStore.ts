@@ -10,8 +10,7 @@ interface UserStore {
 }
 
 const ls = createLocalStorage();
-export const useUserStore = defineStore({
-  id: "app-user-store",
+export const useUserStore = defineStore( "app-user-store",{
   state: (): UserStore => ({
     token: ls.get("TOKEN") || "",
     userInfo:ls.get("USER_INFO")|| null,

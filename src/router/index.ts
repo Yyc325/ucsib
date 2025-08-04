@@ -31,7 +31,12 @@ export const setupRouter = (app: App<Element>) => {
         next();
       }
     } else {
-      next();
+      const isBackstage = to.path.includes('backstage')
+      // if(!isBackstage){
+        next();
+      // }else{
+      //   next(PageEnum.BASE_LOGIN_NAME);
+      // }
     }
   });
   router.afterEach((to, from) => {

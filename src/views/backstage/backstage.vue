@@ -6,9 +6,9 @@
 	<div class="i-layout" :style="{ background }">
 		<div class="i-layout-wrap">
 			<div class="i-layout-header">
-				<div class="i-layout-header-left">
+				<div class="i-layout-header-left" @click="router.push('/home')">
 					<div class="logo">
-						<img src="https://website.xycloud.net.cn/images/logo1.png" alt="">
+						<img src="https://website.xycloud.net.cn/images/logo.png" alt="">
 					</div>
 					<div class="name">{{ $t("backstage.title") }}</div>
 				</div>
@@ -17,7 +17,7 @@
 				</div>
 				<div class="i-layout-header-right">
 					<div class="info-item username">
-						{{ getUserInfo.user_name || "" }}
+						{{ getUserInfo&&getUserInfo.user_name || "" }}
 					</div>
 					<div class="loginout" @click="loginOutHandle">退出</div>
 				</div>

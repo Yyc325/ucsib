@@ -59,6 +59,14 @@ const localRoutes = [
                     title: "UCSIB",
                 },
                 component: ComponentCanstants["ADMISSION_PAGE"],
+            },
+            {
+                path: "article/:id?",
+                name: "Article",
+                meta: {
+                    title: "Article",
+                },
+                component: ComponentCanstants["ARTICLE_PAGE"],
             }
         ],
     },

@@ -184,6 +184,7 @@
   }
 }
 .i-carousel-desc{
+  
   position: absolute;
   left: 0;
   bottom: 0;
@@ -192,6 +193,7 @@
   background: rgba(0,0,0,0.4);
   color: #fff;
   padding: 4px;
+  cursor: pointer;
   .i-carousel-desc_date{
     font-size: 34px;
     margin-bottom: 4px;

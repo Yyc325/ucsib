@@ -1,8 +1,8 @@
 <template>
-  <div class="news-container">
+  <div class="news-container" v-loading="loadingData">
     <div class="news-header">
       <div class="news-header-title">News</div>
-      <div class="news-header-desc">Explore.Discover.Belong</div>
+      <div class="news-header-subtitle">Explore.Discover.Belong</div>
     </div>
     <div class="news-content">
       <div class="news-content-left">
@@ -16,11 +16,11 @@
             </div>
             <div class="i-carousel-content" :style="{transform: `translateX(-${380*isActiveDot}px)`}">
               <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{
-              backgroundImage: `url(${item.url})`,
+              backgroundImage: `url(${item.cover})`,
             }" :class="{'is-focus':isFocusItem===item.url}" @click="handleFocus(item)">
-                <div class="i-carousel-desc">
-                  <span class="i-carousel-desc_date">{{item.date}}</span>
-                  <span class="i-carousel-desc_content">{{item.desc}}</span>
+                <div class="i-carousel-desc" @click="toDetail(item)">
+                  <span class="i-carousel-desc_date">{{item.title}}</span>
+                  <span class="i-carousel-desc_content">{{item.subtitle}}</span>
                 </div>
               </div>
             </div>
@@ -36,9 +36,9 @@
 <!--            <div class="i-carousel-item" :style="{-->
 <!--                          backgroundImage: `url(${item.url})`,-->
 <!--                        }">-->
-<!--              <div class="i-carousel-desc">-->
-<!--                <span class="i-carousel-desc_date">{{ item.date }}</span>-->
-<!--                <span class="i-carousel-desc_content">{{ item.desc }}</span>-->
+<!--              <div class="i-carousel-subtitle">-->
+<!--                <span class="i-carousel-desc_date">{{ item.title }}</span>-->
+<!--                <span class="i-carousel-desc_content">{{ item.subtitle }}</span>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--          </el-carousel-item>-->
@@ -46,11 +46,11 @@
       </div>
       <div class="news-content-right">
         <div class="i-carousel-item" v-for="(item,index) in newsImage" :key="index" :style="{
-              backgroundImage: `url(${item.url})`,
+              backgroundImage: `url(${item.cover})`,
             }">
-          <div class="i-carousel-desc">
-            <span class="i-carousel-desc_date">{{ item.date }}</span>
-            <span class="i-carousel-desc_content">{{ item.desc }}</span>
+          <div class="i-carousel-desc" @click="toDetail(item)">
+            <span class="i-carousel-desc_date">{{ item.title }}</span>
+            <span class="i-carousel-desc_content">{{ item.subtitle }}</span>
           </div>
         </div>
       </div>
@@ -62,6 +62,9 @@
 import {defineComponent, reactive, ref, toRefs} from 'vue';
 import {ArrowRight,ArrowLeft} from '@element-plus/icons-vue'
 import {ElMessage} from "element-plus";
+import {queryNoticeByLocation} from "@/apis/backstage/notice";
+import {router} from "@/router";
+import {useArticle} from "@/hooks/useArticle";
 
 export default defineComponent({
   name: 'News',
@@ -70,52 +73,17 @@ export default defineComponent({
     ArrowLeft
   },
   setup() {
+    const {setCurrentArticle} = useArticle()
     const state = reactive({
       carouselWrapperRef:ref(),
-      newsImage: [
-        {
-          date: "4/16",
-          desc: "IB Collaborative Sciences Project",
-          position: "left",
-          url: 'https://website.xycloud.net.cn/images/about2.png'
-        },
-        {
-          date: "3/24 - 3/28",
-          desc: "Chinese Culture Week",
-          position: "left",
-          url: 'https://website.xycloud.net.cn/images/ChineseCultureWeek.png'
-        },
-        {
-          date: "10/11",
-          desc: "Front Door Decoration",
-          position: "left",
-          url: 'https://website.xycloud.net.cn/images/front_door_decoration.jpg'
-        },
-        {
-          date: "11/25",
-          desc: "Debates Competition",
-          position: "left",
-          url: 'https://website.xycloud.net.cn/images/debates_competition.jpg'
-        },
-        {
-          date: "10/29",
-          desc: "Basketball Games",
-          position: "right",
-          url: 'https://website.xycloud.net.cn/images/basketball.jpg'
-        },
-        {
-          date: "10/01",
-          desc: "E-sports",
-          position: "left",
-          url: 'https://website.xycloud.net.cn/images/e-sport.jpg'
-        },
-      ],
+      loadingData:false,
+      newsImage: [] as any,
       isActiveDot: 0,
       isFocusItem:""
     })
     // 处理轮播图 单项移动
     const handleFocus = (item:any)=>{
-      state.isFocusItem = item.url
+      state.isFocusItem = item.cover
     }
     // 处理轮播图 向前
     const handlePrevious = ()=>{
@@ -131,11 +99,73 @@ export default defineComponent({
       }
       state.isActiveDot = state.isActiveDot+1
     }
+    const queryPublishedArticle = ()=>{
+      state.loadingData = true
+      queryNoticeByLocation({publish_location:'News'}).then(res=>{
+        if(res.status==='success'){
+          if(res.data.length){
+            state.newsImage = res.data.map(vm=> {
+              vm.position = 'left'
+              return vm
+            })
+          }else{
+            state.newsImage = [
+              {
+                title: "4/16",
+                subtitle: "IB Collaborative Sciences Project",
+                position: "left",
+                cover: 'https://website.xycloud.net.cn/images/about2.png'
+              },
+              {
+                title: "3/24 - 3/28",
+                subtitle: "Chinese Culture Week",
+                position: "left",
+                cover: 'https://website.xycloud.net.cn/images/ChineseCultureWeek.png'
+              },
+              {
+                title: "10/11",
+                subtitle: "Front Door Decoration",
+                position: "left",
+                cover: 'https://website.xycloud.net.cn/images/front_door_decoration.jpg'
+              },
+              {
+                title: "11/25",
+                subtitle: "Debates Competition",
+                position: "left",
+                cover: 'https://website.xycloud.net.cn/images/debates_competition.jpg'
+              },
+              {
+                title: "10/29",
+                subtitle: "Basketball Games",
+                position: "right",
+                cover: 'https://website.xycloud.net.cn/images/basketball.jpg'
+              },
+              {
+                title: "10/01",
+                subtitle: "E-sports",
+                position: "left",
+                cover: 'https://website.xycloud.net.cn/images/e-sport.jpg'
+              },
+            ]
+          }
+        }else{
+        }
+        state.loadingData = false
+      })
+    }
+    const toDetail = (about: any)=>{
+      setCurrentArticle(about)
+      router.push({
+        name:'Article'
+      })
+    }
+    queryPublishedArticle()
     return {
       ...toRefs(state),
       handleFocus,
       handlePrevious,
-      handleNext
+      handleNext,
+      toDetail
     };
   },
 });

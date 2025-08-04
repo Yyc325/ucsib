@@ -119,6 +119,7 @@ export default {
         status:"Status",
         publishTime:"Publish Time",
         createTime:"Create Time",
+        publishLocation:"Publish Location"
       },
       popup:{
         cover:"Upload Cover",
@@ -128,9 +129,30 @@ export default {
           subtitle:"Subtitle is required",
         },
         tip:{
+          publish:{
+            title:'Display Position',
+            placeholder:'Please select the display position',
+            form:{
+              position:'Position'
+            }
+          },
+          publish_location: {
+            title: "Publish Tip",
+            description: "Do you really want to publish this announcement?"
+          },
           delete: {
             title:"Delete Tip",
             description:"Do you really want to remove this announcement?"
+          },
+          revoke: {
+            title: "Revoke Tip",
+            description: "Do you really want to revoke this announcement?"
+          },
+          success:'Operation Success',
+          warning:{
+            limitOne:'Please select one piece of data for operation',
+            onlyOne:'Only one piece of data can be operated on',
+            notPositionIndex:"The display code is not filled in"
           }
         }
       }
@@ -150,9 +172,12 @@ export default {
     publish:'Publish',
     edit:'Edit',
     delete:'Delete',
+    save:'Save',
     saveAndCreate:'Save And Create',
     submit:"Submit",
-    cancel:"Cancel"
+    cancel:"Cancel",
+    confirm:'Confirm',
+    revoke:'Revoke'
   },
   component:{
     table:{

@@ -7,9 +7,11 @@
 import { onMounted, PropType, reactive, ref, toRefs, watch} from 'vue';
 // import {uploadFileFn} from '@/api/catalog/catalog';
 import {base64ToFile} from '@/utils/func/file';
-
+import {uploadFile} from "@/apis/backstage/utils";
+import {ElMessage} from "element-plus";
+const emits = defineEmits(['update:modelValue'])
 const props = defineProps({
-  content: {
+  modelValue: {
     type: String as PropType<string>,
     default: ''
   }
@@ -28,9 +30,14 @@ const getSaveData = (type = 'text/lake') => {
 const setData = (data: any) => {
   return state.editorInstance.setDocument('text/lake', data);
 };
+
+const resetData = ()=>{
+  return state.editorInstance.setDocument('text/lake', '<p></p>');
+}
 defineExpose({
   getSaveData,
-  setData
+  setData,
+  resetData
 });
 onMounted(() => {
   state.loading = true;
@@ -43,9 +50,9 @@ onMounted(() => {
     state.editorInstance = createOpenEditor(document.getElementById('editor-root'), {
       input: {},
       disabledPlugins: [],
-      toc: {
-        enable: true
-      },
+      // toc: {
+      //   enable: true
+      // },
       toolbar: ToolbarOptionHelper.start().getOption(),
       envAdapter: {
         openLocalLink(url: string) {
@@ -62,27 +69,27 @@ onMounted(() => {
           let imageFile = null as any;
           let uploadUrl = '';
           let uplaodRes = null as any;
-          // if (type === 'base64') {
-          //   imageFile = base64ToFile(data, Date.now());
-          //   const formData = new FormData();
-          //   formData.append('files', imageFile);
-          //   uplaodRes = await uploadFileFn(formData);
-          // } else if (type === 'url') {
-          //   // data 是一个url，表示需要转存
-          //   uploadUrl = data;
-          //   // const file = await getFileByUrl(data);
-          //   // const formData = new FormData();
-          //   // formData.append('files', file);
-          //   // uplaodRes = await uploadFileFn(formData);
-          // } else if (type === 'file') {
-          //   // data是一个File
-          //   const formData = new FormData();
-          //   formData.append('files', data);
-          //   uplaodRes = await uploadFileFn(formData);
-          // }
-          // if (uplaodRes && uplaodRes.success) {
-          //   uploadUrl = uplaodRes.data[0].url;
-          // }
+          if (type === 'base64') {
+            imageFile = base64ToFile(data, Date.now().toString());
+            const formData = new FormData();
+            formData.append('file', imageFile);
+            uplaodRes = await uploadFile(formData);
+          } else if (type === 'url') {
+            // data 是一个url，表示需要转存
+            uploadUrl = data;
+            // const file = await getFileByUrl(data);
+            // const formData = new FormData();
+            // formData.append('file', file);
+            // uplaodRes = await uploadFileFn(formData);
+          } else if (type === 'file') {
+            // data是一个File
+            const formData = new FormData();
+            formData.append('file', data);
+            uplaodRes = await uploadFile(formData);
+          }
+          if (uplaodRes && uplaodRes.status==='success') {
+            uploadUrl = uplaodRes.data.url;
+          }
           return Promise.resolve({
             url: uploadUrl,
             size: type === 'base64' ? imageFile.size : data.size, // 文件大小
@@ -113,27 +120,27 @@ onMounted(() => {
           let uploadUrl = '';
           let size = data ? data.size : 0;
           let name = data ? data.name : '';
-          // let uplaodRes = null as any;
-          // if (type === 'url') {
-          //   // data 是一个url，表示需要转存
-          //   uploadUrl = data;
-          // } else if (type === 'file') {
-          //   // data是一个File
-          //   size = data.size;
-          //   name = data.name;
-          //   const formData = new FormData();
-          //   formData.append('files', data);
-          //   uplaodRes = await uploadFileFn(formData);
-          // } else {
-          //   size = request.size;
-          //   name = request.name;
-          //   const formData = new FormData();
-          //   formData.append('files', request);
-          //   uplaodRes = await uploadFileFn(formData);
-          // }
-          // if (uplaodRes && uplaodRes.success) {
-          //   uploadUrl = uplaodRes.data[0].url;
-          // }
+          let uplaodRes = null as any;
+          if (type === 'url') {
+            // data 是一个url，表示需要转存
+            uploadUrl = data;
+          } else if (type === 'file') {
+            // data是一个File
+            size = data.size;
+            name = data.name;
+            const formData = new FormData();
+            formData.append('file', data);
+            uplaodRes = await uploadFile(formData);
+          } else {
+            size = request.size;
+            name = request.name;
+            const formData = new FormData();
+            formData.append('file', request);
+            uplaodRes = await uploadFile(formData);
+          }
+          if (uplaodRes && uplaodRes.success) {
+            uploadUrl = uplaodRes.data[0].url;
+          }
           return Promise.resolve({
             url: uploadUrl,
             size: size, // 文件大小
@@ -149,12 +156,12 @@ onMounted(() => {
           const size = file.size;
           const name = file.name;
           let uploadUrl = '';
-          // const formData = new FormData();
-          // formData.append('files', file);
-          // const uplaodRes = await uploadFileFn(formData);
-          // if (uplaodRes && uplaodRes.success) {
-          //   uploadUrl = uplaodRes.data[0].url;
-          // }
+          const formData = new FormData();
+          formData.append('file', file);
+          const uplaodRes = await uploadFile(formData);
+          if (uplaodRes && uplaodRes.success) {
+            uploadUrl = uplaodRes.data[0].url;
+          }
           return Promise.resolve({
             url: uploadUrl,
             size: size,
@@ -163,7 +170,10 @@ onMounted(() => {
         }
       }
     });
-    state.editorInstance.setDocument('text/lake', props.content);
+    state.editorInstance.setDocument('text/lake', props.modelValue);
+    state.editorInstance.on('contentchange', () => {
+      emits('update:modelValue',state.editorInstance.getDocument('text/lake'))
+    });
     state.loading = false;
   };
 });

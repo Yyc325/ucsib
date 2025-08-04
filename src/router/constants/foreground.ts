@@ -12,7 +12,8 @@ const ABOUT_PAGE = () => import("@/views/foreground/about/about.vue");
 const ACADEMIC_PAGE = ()=> import("@/views/foreground/academics/academics.vue")
 // 入学
 const ADMISSION_PAGE = ()=> import("@/views/foreground/admission/admission.vue")
-
+// 文章展示页面
+const ARTICLE_PAGE = ()=> import("@/views/foreground/articleDisplay/articleDisplay.vue")
 export default {
   FOREGROUND_LAYOUT,
   HOME_PAGE,
@@ -20,5 +21,6 @@ export default {
   NEWS_PAGE,
   ABOUT_PAGE,
   ACADEMIC_PAGE,
-  ADMISSION_PAGE
+  ADMISSION_PAGE,
+  ARTICLE_PAGE
 };

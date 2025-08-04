@@ -113,6 +113,7 @@ export default {
                 status: "状态",
                 publishTime: "发布时间",
                 createTime: "创建时间",
+                publishLocation:"发布位置"
             },
             popup: {
                 cover: "上传封面",
@@ -122,9 +123,30 @@ export default {
                     subtitle: "副标题不能为空",
                 },
                 tip: {
+                    publish:{
+                        title:'发布位置',
+                        placeholder:'请选择发布位置',
+                        form:{
+                            position:'展示位置',
+                            positionIndex:'展示编号'
+                        }
+                    },
                     delete: {
                         title: "删除提示",
                         description: "确定要删除该公告吗？"
+                    },
+                    revoke: {
+                        title: "撤销提示",
+                        description: "确定要撤销该公告吗？"
+                    },
+                    publish_location: {
+                        title: "发布提示",
+                        description: "确定要发布该公告吗？"
+                    },
+                    success:'操作成功',
+                    warning:{
+                        limitOne:'请选择一条数据进行操作',
+                        onlyOne:'仅可对一条数据进行操作'
                     }
                 }
             }
@@ -144,10 +166,12 @@ export default {
         publish: '发布',
         edit: '编辑',
         delete: '删除',
+        save:'保存',
         saveAndCreate: '保存并新增',
         submit: "提交",
         cancel: "取消",
         confirm: "确定",
+        revoke:'撤销'
     },
     component: {
         table: {

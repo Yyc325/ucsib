@@ -68,6 +68,11 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             width: fit-content;
+            cursor: pointer;
+            &:hover{
+              text-decoration: underline;
+              text-decoration-color: #fff;
+            }
 
             .title {
               font-size: 64px;
@@ -83,9 +88,9 @@
           &.activitie-1 {
             width: 44%;
             height: 850px;
-
-            background: url("https://website.xycloud.net.cn/images/ChineseCultureWeek.png")
-              no-repeat center center / cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
 
             .info {
               left: 0;
@@ -94,15 +99,17 @@
           &.activitie-2 {
             height: 385px;
 
-            background: url("https://website.xycloud.net.cn/images/Basketball.png")
-              no-repeat center center / cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
           }
           &.activitie-3 {
             height: 436px;
             // background: url("@/assets/images/layout/Halloween.png") no-repeat
             //   center center / cover;
-            background: url("https://website.xycloud.net.cn/images/Halloween1.png")
-              no-repeat center center / cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
           }
         }
       }
