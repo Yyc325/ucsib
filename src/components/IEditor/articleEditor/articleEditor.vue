@@ -172,7 +172,11 @@ onMounted(() => {
     });
     state.editorInstance.setDocument('text/lake', props.modelValue);
     state.editorInstance.on('contentchange', () => {
-      emits('update:modelValue',state.editorInstance.getDocument('text/lake'))
+      if(!state.editorInstance.queryCommandValue('isEmpty')){
+        emits('update:modelValue',state.editorInstance.getDocument('text/lake'))
+      }else{
+        emits('update:modelValue',"")
+      }
     });
     state.loading = false;
   };

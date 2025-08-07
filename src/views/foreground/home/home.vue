@@ -128,9 +128,11 @@ export default defineComponent({
     }
     const toDetail = (about: any)=>{
       setCurrentArticle(about)
-      router.push({
-        name:'Article'
-      })
+      if(about.content){
+        router.push({
+          name:'Article'
+        })
+      }
     }
     queryPublishedArticle()
     return {
