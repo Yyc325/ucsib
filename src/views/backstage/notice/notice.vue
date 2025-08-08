@@ -165,6 +165,9 @@ export default defineComponent({
         if (res.status === "success") {
           state.tableData = res.data
           state.total = res.data.length
+        }else{
+          state.tableData = []
+          state.total = 0
         }
       })
     }
