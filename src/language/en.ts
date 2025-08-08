@@ -127,6 +127,8 @@ export default {
         required:{
           title:"Title is required",
           subtitle:"Subtitle is required",
+          publish_location:"Publish location is required",
+          cover:"Cover is required",
         },
         tip:{
           publish:{

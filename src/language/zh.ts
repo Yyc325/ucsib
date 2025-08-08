@@ -121,6 +121,8 @@ export default {
                 required: {
                     title: "标题不能为空",
                     subtitle: "副标题不能为空",
+                    publish_location:"发布位置不能为空",
+                    cover:"封面不能为空"
                 },
                 tip: {
                     publish:{

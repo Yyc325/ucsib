@@ -2,8 +2,8 @@
   <el-drawer :title="t(`operator.${drawerObj.command}`)" v-model="drawerObj.isShow" size="76.4%">
     <div class="add-notice">
       <div class="add-notice-body">
-        <el-form :model="noticeForm" :rules="noticeRules" label-position="top">
-          <el-form-item :label="t(`backstage.Notice.popup.cover`)" prop="cover_url" required label-position="left" class="label-left-center">
+        <el-form ref="noticeFormRef" :model="noticeForm" :rules="noticeRules" label-position="top">
+          <el-form-item :label="t(`backstage.Notice.popup.cover`)" prop="cover_url" label-position="left" class="label-left-center">
             <el-upload
               class="avatar-uploader"
               accept="image/*"
@@ -29,7 +29,7 @@
               <el-input type="textarea" v-model="noticeForm.subtitle" :rows="4" resize="none" show-word-limit maxlength="20"></el-input>
             </div>
           </el-form-item>
-          <el-form-item :label="t('backstage.Notice.popup.tip.publish.form.position')">
+          <el-form-item :label="t('backstage.Notice.popup.tip.publish.form.position')"  prop="publish_location">
             <el-select v-model="noticeForm.publish_location">
               <el-option v-for="position in displayPosition" :key="position.value" :label="position.label" :value="position.value"></el-option>
             </el-select>
@@ -85,6 +85,7 @@ export default defineComponent({
   setup(props, {emit,expose}) {
     const {t} = useI18n()
     const contentEditor = ref<any>(null)
+    const noticeFormRef = ref<any>(null)
     const state = reactive({
       drawerObj: {
         isShow: false,
@@ -119,6 +120,16 @@ export default defineComponent({
       noticeRules: {
         title:[{
           message:t('backstage.Notice.popup.required.title'),
+          required: true,
+          trigger:"blur",
+        }],
+        subtitle:[{
+          message:t('backstage.Notice.popup.required.subtitle'),
+          required: true,
+          trigger:"blur",
+        }],
+        publish_location:[{
+          message:t('backstage.Notice.popup.required.publish_location'),
           required: true,
           trigger:"blur",
         }]
@@ -170,33 +181,50 @@ export default defineComponent({
     }
     // 保存并新增
     const saveAndCreate = (event:any,refresh:boolean = true)=>{
+      if(!state.noticeForm.cover){
+        ElMessage.warning(t('backstage.Notice.popup.required.cover'))
+        return
+      }
       if(state.noticeForm.publish_location==='About'&&!state.noticeForm.position_index){
         ElMessage.warning(t('backstage.Notice.popup.tip.warning.notPositionIndex'))
         return
       }
-      createNotice(state.noticeForm).then((res)=>{
-        if(res.status==='success'){
-          ElMessage.success(t('backstage.Notice.popup.tip.success'))
-          if(refresh){
-            initData()
-          }else{
-            initData()
-            cancelHandle()
-          }
-          emit('loadData')
+      noticeFormRef.value.validate((valid:boolean)=>{
+        if(valid){
+          createNotice(state.noticeForm).then((res)=>{
+            if(res.status==='success'){
+              ElMessage.success(t('backstage.Notice.popup.tip.success'))
+              if(refresh){
+                initData()
+              }else{
+                initData()
+                cancelHandle()
+              }
+              emit('loadData')
+            }
+          })
+
         }
       })
     }
     // 修改
     const handleUpdate = (event: any)=>{
-      updateNotice(state.noticeForm).then(res=>{
-        if(res.status==='success'){
-          ElMessage.success(t('backstage.Notice.popup.tip.success'))
-          cancelHandle()
-          initData()
-          emit('loadData')
-        }
-      })
+      if(!state.noticeForm.cover){
+        ElMessage.warning(t('backstage.Notice.popup.required.cover'))
+        return
+      }
+      noticeFormRef.value.validate((valid:boolean)=>{
+        if(valid){
+          updateNotice(state.noticeForm).then(res=>{
+            if(res.status==='success'){
+              ElMessage.success(t('backstage.Notice.popup.tip.success'))
+              cancelHandle()
+              initData()
+              emit('loadData')
+            }
+          })
+
+        }})
     }
     // 取消
     const cancelHandle = ()=>{
@@ -209,6 +237,7 @@ export default defineComponent({
     return {
       t,
       contentEditor,
+      noticeFormRef,
       ...toRefs(state),
       changeFile,
       saveAndCreate,
