@@ -181,7 +181,7 @@ export default defineComponent({
     }
     // 保存并新增
     const saveAndCreate = (event:any,refresh:boolean = true)=>{
-      if(!state.noticeForm.cover){
+      if(!state.noticeForm.cover_url){
         ElMessage.warning(t('backstage.Notice.popup.required.cover'))
         return
       }
@@ -209,7 +209,7 @@ export default defineComponent({
     }
     // 修改
     const handleUpdate = (event: any)=>{
-      if(!state.noticeForm.cover){
+      if(!state.noticeForm.cover_url){
         ElMessage.warning(t('backstage.Notice.popup.required.cover'))
         return
       }
