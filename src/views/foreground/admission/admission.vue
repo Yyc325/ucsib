@@ -9,7 +9,7 @@
       <div class="admission-body">
         <div class="admission-section preview-video">
           <template v-if="videoUrl">
-            <video :src="videoUrl"></video>
+            <video :src="videoUrl" controls></video>
           </template>
           <template v-else>
             <div class="preview-video__empty">
@@ -76,7 +76,7 @@ export default defineComponent({
   setup(){
     const {t} = useI18n()
     const state = reactive({
-      videoUrl:'',
+      videoUrl:'https://website.xycloud.net.cn/video/Ulink27.mp4',
       linkList:[
         {
           label:'Application Material',
